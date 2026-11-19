@@ -1,46 +1,39 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,6,11,20&height=220&section=header&text=Mathan%20Dinesh&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full-Stack%20Developer%20%E2%80%A2%20AI%20%26%20Deep%20Learning%20Engineer&descAlignY=62&descSize=18" alt="Mathan Dinesh Header" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=040507&stroke=dc2626&strokeWidth=2.5&height=180&section=header&text=Mathan%20Dinesh&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Deep%20Learning%20Engineer&descAlignY=68&descSize=16" alt="Mathan Dinesh" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://readme-typing-svg.demolab.com">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2600&pause=1000&color=DC2626&center=true&vCenter=true&width=650&lines=Full-Stack+Web+Developer;Computer+Vision+%26+YOLOv8+Engineer;Smart+India+Hackathon+2024+Finalist;B.Tech+Information+Technology+%40+SREC;Architecting+Intelligent+Production+Systems" alt="Typing SVG" />
+  <a href="https://mathan1227.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/LIVE_PORTFOLIO-TOUCH_TO_OPEN_WEBSITE-dc2626?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Touch to View Portfolio" height="42" />
   </a>
 </p>
 
 <p align="center">
-  <a href="mailto:mathandinesh003@gmail.com">
-    <img src="https://img.shields.io/badge/Email-mathandinesh003%40gmail.com-dc2626?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  <a href="https://wa.me/918925148149">
-    <img src="https://img.shields.io/badge/WhatsApp-+91%2089251%2048149-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
-  </a>
-  <a href="https://github.com/Mathan1227">
-    <img src="https://img.shields.io/badge/GitHub-Mathan1227-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://github.com/Mathan1227/portfolio">
-    <img src="https://img.shields.io/badge/Portfolio-Live_Site-111827?style=for-the-badge&logo=google-chrome&logoColor=dc2626" alt="Portfolio" />
-  </a>
-  <img src="https://img.shields.io/badge/Location-Coimbatore%2C%20India-0a0b10?style=for-the-badge&logo=google-maps&logoColor=dc2626" alt="Location" />
+  <a href="https://mathan1227.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-mathan1227.github.io%2Fportfolio-111827?style=flat-square&logo=safari&logoColor=dc2626" alt="Portfolio URL" /></a>
+  <a href="mailto:mathandinesh003@gmail.com"><img src="https://img.shields.io/badge/Email-mathandinesh003%40gmail.com-111827?style=flat-square&logo=gmail&logoColor=dc2626" alt="Email" /></a>
+  <a href="https://wa.me/918925148149"><img src="https://img.shields.io/badge/WhatsApp-+91_89251_48149-111827?style=flat-square&logo=whatsapp&logoColor=25D366" alt="WhatsApp" /></a>
+  <a href="https://github.com/Mathan1227"><img src="https://img.shields.io/badge/GitHub-Mathan1227-111827?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
+  <img src="https://img.shields.io/badge/Location-Coimbatore%2C_India-111827?style=flat-square&logo=google-maps&logoColor=dc2626" alt="Location" />
 </p>
 
 ---
 
-### ✦ Executive Summary
+### // Executive Overview
 
 ```yaml
-Name: Mathan Dineshkumar (Mathan Dinesh)
+Engineer: Mathan Dineshkumar
+Role: Full-Stack Developer & AI Systems Engineer
 Degree: B.Tech in Information Technology (Class of 2026)
 Institution: Sri Ramakrishna Engineering College (SREC), Coimbatore
-Core Focus: End-to-End Full-Stack Architecture & Deep Learning Vision (YOLOv8)
-Honors: Smart India Hackathon (SIH 2024), NVIDIA DLI Deep Learning Certified
+Core Focus: End-to-End Full-Stack Web Architecture & Computer Vision (YOLOv8)
+Honors: Smart India Hackathon (SIH 2024), NVIDIA DLI Workshop Certified
 Linguistic Fluency: English (Professional), Tamil (Native), Kannada (Conversational)
-Availability: Open for Software Engineering Roles & Technical Collaborations
+Availability: Open for Software Engineering Opportunities & Technical Collaborations
 ```
 
 ---
 
-### 📊 GitHub Telemetry & Activity Matrix
+### // Telemetry & Activity
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Mathan1227&show_icons=true&theme=radical&bg_color=040507&border_color=dc2626&title_color=dc2626&text_color=ffffff&icon_color=dc2626&hide_border=false" alt="Mathan's GitHub Stats" width="49%" />
@@ -53,51 +46,52 @@ Availability: Open for Software Engineering Roles & Technical Collaborations
 
 ---
 
-### 🛠️ Technical Arsenal
+### // Technical Arsenal
 
-#### 🤖 AI, Machine Learning & Edge Computer Vision
+#### AI, Deep Learning & Computer Vision
 <p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/YOLOv8-Object_Detection-FF6F00?style=for-the-badge&logo=yolo&logoColor=white" />
-  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/Neural_Networks-Deep_Learning-dc2626?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Image_Processing-Dataset_Curation-005571?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/YOLOv8-FF6F00?style=flat-square&logo=yolo&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/Neural_Networks-dc2626?style=flat-square" />
+  <img src="https://img.shields.io/badge/Object_Detection-111827?style=flat-square" />
+  <img src="https://img.shields.io/badge/Dataset_Curation-005571?style=flat-square" />
 </p>
 
-#### 🌐 Full-Stack Web Architecture
+#### Full-Stack Web Architecture
 <p align="left">
-  <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/RESTful_APIs-Microservices-dc2626?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/React.js-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/JavaScript_ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/RESTful_APIs-dc2626?style=flat-square" />
 </p>
 
-#### ⚡ Engineering Workflow, Cloud & Dev Tools
+#### Engineering Workflow & Tooling
 <p align="left">
-  <img src="https://img.shields.io/badge/Jira_(Scrum)-0052CC?style=for-the-badge&logo=jira&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
-  <img src="https://img.shields.io/badge/Agile_Sprints-CI%2FCD-040507?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jira_(Scrum)-0052CC?style=flat-square&logo=jira&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux_CLI-FCC624?style=flat-square&logo=linux&logoColor=black" />
 </p>
 
 ---
 
-### ⭐ Featured Engineering Highlights
+### // Flagship Engineering Projects
 
 | Project | Specialization | Architecture Highlights |
 | :--- | :--- | :--- |
-| **🍎 Pesticide Defect Detection** | AI & Edge Vision | Real-time agricultural fruit & vegetable defect identification using custom-trained **YOLOv8** weights with **94.2% mAP precision** and OpenCV bounding matrices. |
-| **🛒 Cartivo Commerce Engine** | Full-Stack Web | Ultra-fast client-side state synchronized shopping engine built with **React**, **Tailwind CSS**, dynamic catalog filtration, and responsive checkout flows. |
-| **🚌 Transit Booking Portal** | Agile Full-Stack | Complete transit ticket reservation platform managed with **Agile Scrum in Jira**, route scheduling, seat reservation logic, and structured database models. |
-| **🔊 Bio-Sonic Crop Deterrent** | Agri-Tech / IoT | Eco-friendly acoustic crop protection utilizing targeted ultrasonic sound waves (22kHz–45kHz) to safely repel agricultural pests without toxic chemicals. |
+| **Pesticide Defect Detection** | AI & Edge Vision | Real-time agricultural fruit & vegetable defect identification using custom-trained **YOLOv8** deep learning weights with **94.2% mAP precision** and OpenCV bounding matrices. |
+| **Cartivo Commerce Engine** | Full-Stack Web | Ultra-fast client-side state synchronized shopping engine engineered with **React** and **Tailwind CSS**, dynamic catalog filtration, and responsive checkout flows. |
+| **Bus Transit Booking Portal** | Agile Full-Stack | Transit reservation platform engineered with **Agile Scrum in Jira**, route scheduling, seat reservation logic, and structured database models. |
+| **Bio-Sonic Deterrent Grid** | IoT / Agri-Tech | Sustainable acoustic crop protection utilizing targeted ultrasonic sound waves (22kHz–45kHz) to safely repel agricultural pests without chemical pesticides. |
 
 ---
 
-### 🏆 Hackathons & Credentials
+### // Hackathons & Credentials
 
 * **Smart India Hackathon (SIH 2024):** Selected Participant for the 36-hour National Level Innovation Sprint.
 * **NVIDIA Deep Learning Institute:** Hands-on Workshop Certification in *Fundamentals of Deep Learning & Neural Network Inference*.
@@ -105,20 +99,13 @@ Availability: Open for Software Engineering Roles & Technical Collaborations
 
 ---
 
-### 📬 Connect With Me
+### // Direct Contact
 
-<p align="left">
-  <a href="mailto:mathandinesh003@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-mathandinesh003%40gmail.com-dc2626?style=flat-square&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://wa.me/918925148149">
-    <img src="https://img.shields.io/badge/WhatsApp-Chat_Now-25D366?style=flat-square&logo=whatsapp&logoColor=white" />
-  </a>
-  <a href="tel:+918925148149">
-    <img src="https://img.shields.io/badge/Direct_Line-+91_89251_48149-111827?style=flat-square&logo=phone&logoColor=white" />
-  </a>
-</p>
+* **Portfolio:** [mathan1227.github.io/portfolio](https://mathan1227.github.io/portfolio/)
+* **Email:** [mathandinesh003@gmail.com](mailto:mathandinesh003@gmail.com)
+* **WhatsApp:** [+91 89251 48149](https://wa.me/918925148149)
+* **Location:** Coimbatore, Tamil Nadu, India
 
 <p align="center">
-  <sub>Designed with precision &bull; © 2026 Mathan Dinesh &bull; Engineered for impact</sub>
+  <sub>Designed with precision &bull; Mathan Dinesh &bull; Built for high throughput</sub>
 </p>
