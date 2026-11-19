@@ -101,7 +101,7 @@ Availability: Open for Software Engineering Opportunities & Technical Collaborat
 
 ### // Direct Contact
 
-* **Portfolio:** [mathan1227.github.io/portfolio](https://mathan1227.github.io/portfolio/)
+* **Portfolio:** [mathan1227.github.io/Portfolio](https://mathan1227.github.io/Portfolio/)
 * **Email:** [mathandinesh003@gmail.com](mailto:mathandinesh003@gmail.com)
 * **WhatsApp:** [+91 89251 48149](https://wa.me/918925148149)
 * **Location:** Coimbatore, Tamil Nadu, India
