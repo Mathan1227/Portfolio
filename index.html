@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathan Dinesh — Portfolio</title>
+  <meta name="description" content="Portfolio of Mathan Dinesh - Full-Stack Developer & AI Engineer. B.Tech IT, SIH 2024, NVIDIA Workshop." />
+  <meta name="theme-color" content="#040507" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mathan Dinesh — Full-Stack Developer & AI Engineer" />
+  <meta property="og:description" content="Architecting full-stack web applications and computer vision deep learning systems with modern craft, clean code, and user empathy." />
+  <meta property="og:image" content="assets/mathan_edited_frameless.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mathan Dinesh — Full-Stack Developer & AI Engineer" />
+  <meta name="twitter:description" content="Architecting full-stack web applications and computer vision deep learning systems." />
+
+  <!-- Google Fonts: Anton, Syne (Bold Editorial), Outfit (Modern Geometric), Caveat (Script), JetBrains Mono, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Anton"', 'sans-serif'],
+            syne: ['"Syne"', 'sans-serif'],
+            outfit: ['"Outfit"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            handwriting: ['"Caveat"', 'cursive'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              red: '#dc2626',      /* Main Crimson Red */
+              crimson: '#991b1b',  /* Deep Crimson */
+              darkred: '#7f1d1d',  /* Dark Wine Red */
+            },
+            surface: {
+              950: '#040507',      /* Deep Pitch Noir Black */
+              900: '#0a0b10',      /* Card Background */
+              850: '#12141a',      /* Elevated Surface */
+              800: '#1c1f26',      /* Borders */
+              700: '#2b303c',
+            }
+          }
+        }
+      }
+    }
+
+
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: #090a0d; }
+    ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 9999px; }
+
+    /* Giant Background Word (Editorial Moniker) */
+    .hero-bg-text {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(4.2rem, 11vw, 10rem);
+      line-height: 0.96;
+      padding-top: 20px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #ffffff;
+      opacity: 0.90;
+      user-select: none;
+      pointer-events: none;
+      filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.12));
+    }
+
+    /* Section 4: Illuminated Circuit Timeline - Animated Draw-Down on Scroll */
+    .process-line {
+      position: absolute;
+      top: 24px;
+      bottom: 24px;
+      left: 17px;
+      width: 2px;
+      background: linear-gradient(180deg, #dc2626 0%, #ef4444 35%, #991b1b 70%, rgba(220, 38, 38, 0.2) 100%);
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+      z-index: 0;
+      transform-origin: top center;
+      transform: scaleY(0);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+      animation: circuitBeam 3.5s ease-in-out infinite alternate;
+    }
+    .is-revealed .process-line {
+      transform: scaleY(1);
+    }
+    @keyframes circuitBeam {
+      0% { box-shadow: 0 0 8px rgba(220, 38, 38, 0.4); opacity: 0.85; }
+      100% { box-shadow: 0 0 18px rgba(239, 68, 68, 0.9); opacity: 1; }
+    }
+
+    /* Section 2: Cyber-Tactical Project Card Styles */
+    .project-card-cyber {
+      position: relative;
+      background: #0d0f14;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 1.25rem;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+    .project-card-cyber:hover {
+      transform: translateY(-8px);
+      border-color: rgba(220, 38, 38, 0.6);
+      box-shadow: 0 20px 40px -15px rgba(220, 38, 38, 0.3), 0 0 0 1px rgba(220, 38, 38, 0.3);
+    }
+    .project-card-cyber::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(400px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(220, 38, 38, 0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .project-card-cyber:hover::before {
+      opacity: 1;
+    }
+
+    /* Radar Scan Beam on YOLOv8 Card */
+    .radar-scan-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ef4444, transparent);
+      box-shadow: 0 0 8px #ef4444;
+      animation: radarScan 2.4s ease-in-out infinite;
+    }
+    @keyframes radarScan {
+      0% { top: 0%; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    /* Section 2: Bio-Sonic Soundwave Animation */
+    .soundwave-bar {
+      display: inline-block;
+      width: 3px;
+      border-radius: 2px;
+      background: #ef4444;
+      animation: soundwave 1.1s ease-in-out infinite alternate;
+    }
+    @keyframes soundwave {
+      0% { height: 4px; opacity: 0.35; }
+      100% { height: 22px; opacity: 1; }
+    }
+
+    /* Section 2: Transit Route Animation for Bus Booking */
+    .transit-pulse-dot {
+      animation: transitMove 2.4s ease-in-out infinite alternate;
+    }
+    @keyframes transitMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(44px); }
+    }
+
+    /* Section 3: Tech Chip Interactive Glow, Cascading Scroll Reveal & Magnetic Dynamics */
+    .tech-chip {
+      display: inline-flex;
+      align-items: center;
+      opacity: 0.25;
+      transform: translateY(12px) scale(0.94);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+      will-change: transform, opacity;
+    }
+    .is-revealed .tech-chip {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .is-revealed .tech-chip:nth-child(1) { transition-delay: 0.04s; }
+    .is-revealed .tech-chip:nth-child(2) { transition-delay: 0.08s; }
+    .is-revealed .tech-chip:nth-child(3) { transition-delay: 0.12s; }
+    .is-revealed .tech-chip:nth-child(4) { transition-delay: 0.16s; }
+    .is-revealed .tech-chip:nth-child(5) { transition-delay: 0.20s; }
+    .is-revealed .tech-chip:nth-child(6) { transition-delay: 0.24s; }
+    .is-revealed .tech-chip:nth-child(7) { transition-delay: 0.28s; }
+    .tech-chip:hover {
+      transform: translateY(-3px) scale(1.05) !important;
+      border-color: #dc2626 !important;
+      box-shadow: 0 4px 16px -2px rgba(220, 38, 38, 0.45);
+      color: #ffffff !important;
+    }
+    .tech-chip.is-magnetized {
+      border-color: rgba(239, 68, 68, 0.8) !important;
+      background-color: rgba(220, 38, 38, 0.18) !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.6), 0 0 32px rgba(220, 38, 38, 0.3) !important;
+    }
+
+    /* Language Fluency Meter Fill on Scroll with Liquid Shine */
+    .fluency-bar {
+      height: 5px;
+      border-radius: 9999px;
+      background: #1c1f26;
+      overflow: hidden;
+      position: relative;
+    }
+    .fluency-fill {
+      height: 100%;
+      border-radius: 9999px;
+      background: linear-gradient(90deg, #dc2626, #ef4444);
+      box-shadow: 0 0 8px rgba(220, 38, 38, 0.6);
+      width: 0% !important;
+      transition: width 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .fluency-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      animation: fluencyLiquid 2.8s infinite ease-in-out;
+    }
+    @keyframes fluencyLiquid {
+      0% { left: -100%; }
+      50%, 100% { left: 160%; }
+    }
+    .is-revealed .fluency-fill {
+      width: var(--target-width, 100%) !important;
+    }
+
+    /* Section 4: Process Laser Dot & Circuit Tracking */
+    .process-line {
+      position: absolute;
+      top: 28px;
+      bottom: 28px;
+      left: 36px;
+      width: 2px;
+      background: linear-gradient(180deg, #dc2626 0%, #ef4444 60%, rgba(220, 38, 38, 0.15) 100%);
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+      transform-origin: top center;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 0;
+    }
+    .process-laser-dot {
+      position: absolute;
+      left: 36px;
+      top: 28px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 14px #ef4444, 0 0 28px #dc2626;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      pointer-events: none;
+      transition: top 0.12s ease-out, opacity 0.2s ease;
+      opacity: 0;
+    }
+    .is-revealed .process-laser-dot {
+      opacity: 1;
+    }
+    /* Section 4: Modern High-Precision Engineering Process Step */
+    .step-item {
+      position: relative;
+      background: rgba(13, 15, 22, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      backdrop-filter: blur(14px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, border-color, box-shadow;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      opacity: 0.45;
+      transform: perspective(900px) rotateX(-18deg) translateY(-6px) scale(0.97);
+    }
+    .is-revealed .step-item {
+      opacity: 0.95;
+      transform: perspective(900px) rotateX(0deg) translateY(0) scale(1);
+    }
+    .step-item:hover {
+      background: rgba(18, 22, 32, 0.95);
+      border-color: rgba(239, 68, 68, 0.45);
+      transform: translateX(4px) scale(1.01);
+    }
+    /* When the lights come on (Active State) - Ultra-Crisp, High-Tech, Zero Muddy Red */
+    .step-item.is-active {
+      background: rgba(18, 22, 32, 0.96) !important;
+      border-color: rgba(239, 68, 68, 0.75) !important;
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(239, 68, 68, 0.3) !important;
+      transform: translateX(8px) scale(1.01) !important;
+    }
+    .step-item.is-active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3.5px;
+      border-radius: 1.25rem 0 0 1.25rem;
+      background: linear-gradient(180deg, #ef4444, #dc2626);
+      box-shadow: 0 0 12px #ef4444;
+    }
+    .step-node {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 9999px;
+      background: #090a0f;
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+    .step-item.is-active .step-node {
+      background: #090a0f !important;
+      border-color: #ef4444 !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.8), inset 0 0 8px rgba(239, 68, 68, 0.4) !important;
+      transform: scale(1.12) !important;
+    }
+    .phase-badge {
+      font-family: monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      transition: all 0.25s ease;
+    }
+    .step-item.is-active .phase-badge {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.12);
+      border-color: rgba(239, 68, 68, 0.35);
+    }
+
+    /* Section 2: Cyber-Tactical Curtain Split Reveal */
+    .curtain-shutter {
+      position: absolute;
+      inset: 0;
+      z-index: 25;
+      pointer-events: none;
+      overflow: hidden;
+      display: flex;
+    }
+    .curtain-blade {
+      width: 50%;
+      height: 100%;
+      background: #040507;
+      transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    .curtain-blade-left {
+      border-right: 1px solid rgba(220, 38, 38, 0.5);
+    }
+    .curtain-blade-right {
+      border-left: 1px solid rgba(220, 38, 38, 0.5);
+    }
+    .curtain-laser-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, transparent, #ef4444 25%, #ffffff 50%, #ef4444 75%, transparent);
+      box-shadow: 0 0 18px #ef4444, 0 0 36px #dc2626;
+      transition: opacity 0.5s ease 0.4s, transform 0.6s ease 0.3s;
+      z-index: 30;
+    }
+    .is-revealed .curtain-blade-left,
+    .curtain-shutter.is-open .curtain-blade-left {
+      transform: translateX(-102%);
+    }
+    .is-revealed .curtain-blade-right,
+    .curtain-shutter.is-open .curtain-blade-right {
+      transform: translateX(102%);
+    }
+    .is-revealed .curtain-laser-line,
+    .curtain-shutter.is-open .curtain-laser-line {
+      opacity: 0;
+      transform: translateX(-50%) scaleY(0);
+    }
+
+    /* Section 2: Cyber-Tactical Perspective Tunnel Entrance */
+    .perspective-tunnel-stage {
+      perspective: 1400px;
+      perspective-origin: 50% 30%;
+      transform-style: preserve-3d;
+    }
+
+
+    /* Section 3: Orbital Gyroscope Reactor */
+    .orbital-reactor {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(220, 38, 38, 0.7);
+      pointer-events: none;
+    }
+    .orbit-ring-1 {
+      width: 34px;
+      height: 34px;
+      animation: orbitRotate 9s linear infinite;
+    }
+    .orbit-ring-2 {
+      width: 22px;
+      height: 22px;
+      border-style: dotted;
+      border-color: rgba(255, 255, 255, 0.45);
+      animation: orbitRotateReverse 5s linear infinite;
+    }
+    .orbit-core {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 10px #ef4444, 0 0 20px #dc2626;
+      animation: corePulse 2s ease-in-out infinite alternate;
+    }
+    @keyframes orbitRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes orbitRotateReverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes corePulse {
+      0% { transform: scale(0.8); box-shadow: 0 0 8px #ef4444; }
+      100% { transform: scale(1.25); box-shadow: 0 0 16px #ef4444, 0 0 28px #dc2626; }
+    }
+
+    /* Section 5: Contact Reveal (Crisp, High Visibility, Never Clipped) */
+    #contact.reveal {
+      opacity: 0.25;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    #contact.reveal.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Section 5: Black Hole Gravitational Singularity */
+    .blackhole-singularity-wrap {
+      position: absolute;
+      right: -60px;
+      top: -40px;
+      width: 440px;
+      height: 440px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+      overflow: visible;
+    }
+    .blackhole-core {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #020204;
+      box-shadow: 0 0 65px rgba(220, 38, 38, 0.95), inset 0 0 45px #000000;
+      z-index: 4;
+    }
+    .blackhole-accretion-disk {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 350px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, transparent 0%, rgba(220, 38, 38, 0.6) 22%, transparent 48%, rgba(239, 68, 68, 0.85) 72%, transparent 100%);
+      filter: blur(14px);
+      animation: accretionSpin 18s linear infinite;
+      z-index: 2;
+    }
+    .blackhole-lensing-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 120, 120, 0.5);
+      box-shadow: 0 0 28px rgba(239, 68, 68, 0.65), inset 0 0 20px rgba(220, 38, 38, 0.35);
+      animation: lensingPulse 3.5s ease-in-out infinite alternate;
+      z-index: 3;
+    }
+    @keyframes accretionSpin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @keyframes lensingPulse {
+      0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.7; }
+      100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; }
+    }
+
+    /* Rotating Neon Dashed Ring around Avatar */
+    .avatar-ring-glow {
+      position: relative;
+    }
+    .avatar-ring-glow::before {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(220, 38, 38, 0.7);
+      animation: ringRotate 14s linear infinite;
+    }
+    @keyframes ringRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Legendary Shimmering Crimson Text Gradient */
+    .legendary-headline {
+      background: linear-gradient(110deg, #dc2626 20%, #ff6b6b 50%, #dc2626 80%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShineSweep 4.5s ease-in-out infinite;
+    }
+    @keyframes textShineSweep {
+      0%, 15% { background-position: 180% 0; }
+      65%, 100% { background-position: -80% 0; }
+    }
+
+
+    /* Section 5: Floating Crimson Quote Mesh Orb */
+    .quote-mesh-orb {
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255, 68, 68, 0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(40px);
+      pointer-events: none;
+      animation: quoteOrbFloat 8s ease-in-out infinite alternate;
+    }
+    @keyframes quoteOrbFloat {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-20px, 20px) scale(1.15); }
+    }
+
+    /* Contact Action Pill with Glowing Hover and Scroll Stagger */
+    .contact-card-interactive {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .is-revealed .contact-card-interactive:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.10s; }
+    .is-revealed .contact-card-interactive:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.20s; }
+    .is-revealed .contact-card-interactive:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.30s; }
+    .is-revealed .contact-card-interactive:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
+    .contact-card-interactive:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: rgba(220, 38, 38, 0.7);
+      box-shadow: 0 12px 28px -6px rgba(220, 38, 38, 0.25);
+    }
+
+    /* Top Reading Progress Bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2.5px;
+      width: 0%;
+      background: linear-gradient(90deg, #dc2626, #ef4444, #f87171, #dc2626);
+      background-size: 200% 100%;
+      box-shadow: 0 0 14px rgba(220, 38, 38, 0.8), 0 0 25px rgba(220, 38, 38, 0.4);
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    /* Silky Multi-Plane Counter-Parallax Elements */
+    .hero-bg-text {
+      will-change: transform;
+    }
+    #hero-portrait-img {
+      will-change: transform;
+    }
+
+    /* Snappy One-Time Letter Arrival on Home Page (Apple / Linear Stagger) */
+    .p-char {
+      display: inline-block;
+      line-height: inherit;
+      animation: letterArrival 0.50s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--idx) * 35ms) both;
+      will-change: transform, opacity;
+    }
+
+    @keyframes letterArrival {
+      0% {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Cinematic Ambient Glow behind Portrait (Static, Pure Studio Rim Light) */
+    .hero-ambient-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 440px;
+      height: 440px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(220, 38, 38, 0.28) 0%, rgba(220, 38, 38, 0.08) 45%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(48px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Clean Static Accent for "Hi, I'm" (Snappy Reveal on Load, Zero Floating) */
+    .kinetic-greeting {
+      display: inline-block;
+      position: relative;
+      transform: rotate(-2deg);
+      animation: greetingFadeIn 0.50s cubic-bezier(0.16, 1, 0.3, 1) 0.10s both;
+      filter: none !important;
+      text-shadow: none !important;
+    }
+
+    @keyframes greetingFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(14px) rotate(-2deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px) rotate(-2deg);
+      }
+    }
+
+    .kinetic-greeting:hover {
+      transform: translateY(-2px) rotate(0deg) scale(1.04) !important;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      cursor: pointer;
+    }
+
+    /* Linear/Raycast Spotlight Flashlight on Cards */
+    .pinterest-card {
+      position: relative;
+      background: #111318;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.25rem;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+      will-change: transform;
+    }
+    .pinterest-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(220, 38, 38, 0.14), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .pinterest-card:hover::before {
+      opacity: 1;
+    }
+    .pinterest-card:hover {
+      border-color: rgba(220, 38, 38, 0.65);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px -12px rgba(220, 38, 38, 0.22), 0 0 0 1px rgba(220, 38, 38, 0.25);
+    }
+
+    /* Ultra-Smooth Action Buttons */
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, background-color 0.15s ease, border-color 0.15s ease;
+      will-change: transform;
+    }
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -4px rgba(220, 38, 38, 0.35);
+    }
+    .btn-action:active {
+      transform: translateY(0);
+    }
+
+    /* Ultra-Smooth 60fps/120fps Scroll Reveals (High-Speed & Silky Fluidity) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .delay-100 { transition-delay: 70ms; }
+    .delay-200 { transition-delay: 140ms; }
+    .delay-300 { transition-delay: 210ms; }
+    .delay-400 { transition-delay: 280ms; }
+    .delay-500 { transition-delay: 350ms; }
+
+    /* Kinetic Font Scroll Reveals for Section Headers */
+    .kinetic-heading {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .kinetic-heading .kinetic-word {
+      display: inline-block;
+      transform: translateY(115%);
+      opacity: 0;
+      transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+      will-change: transform, opacity;
+    }
+    .is-revealed .kinetic-heading .kinetic-word,
+    .is-revealed.kinetic-heading .kinetic-word {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    .is-revealed .kinetic-heading .kinetic-word:nth-child(1) { transition-delay: 0.08s; }
+    .is-revealed .kinetic-heading .kinetic-word:nth-child(2) { transition-delay: 0.18s; }
+    .is-revealed .kinetic-heading .kinetic-word:nth-child(3) { transition-delay: 0.28s; }
+
+    /* Animated Accent Line Draw Across Headers */
+    .accent-line-draw {
+      position: relative;
+    }
+    .accent-line-draw::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #dc2626, #ef4444 60%, transparent 100%);
+      transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+      box-shadow: 0 0 8px rgba(220, 38, 38, 0.6);
+    }
+    .is-revealed.accent-line-draw::after,
+    .is-revealed .accent-line-draw::after {
+      width: 100%;
+    }
+
+    /* Section 2: Cyber-Tactical Perspective Tunnel Entrance */
+    .project-card-cyber.reveal {
+      opacity: 0;
+      transform: perspective(1200px) translate3d(0, 60px, -240px) rotateX(20deg) scale(0.88);
+      filter: blur(4px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      will-change: opacity, transform, filter;
+    }
+    .project-card-cyber.reveal.is-revealed {
+      opacity: 1;
+      transform: perspective(1200px) translate3d(0, 0, 0) rotateX(0deg) scale(1);
+      filter: blur(0);
+    }
+
+    /* Section 5: Quote Card Entrance */
+    .quote-card-reveal {
+      opacity: 0;
+      transform: translateY(36px) scale(0.96);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    }
+    .quote-card-reveal.is-revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Subtle Mockup Zoom on Hover */
+    .project-mockup {
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease;
+    }
+    .pinterest-card:hover .project-mockup {
+      transform: scale(1.03) translateY(-2px);
+      border-color: rgba(220, 38, 38, 0.45);
+    }
+
+    /* Aesthetic Shimmer Light Sweep on Status Pill */
+    .shimmer-pill {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer-pill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: skewX(-20deg);
+      animation: shimmerPass 4s infinite ease-in-out;
+    }
+    @keyframes shimmerPass {
+      0% { left: -100%; }
+      30%, 100% { left: 200%; }
+    }
+  </style>
+</head>
+<body class="bg-surface-950 text-slate-100 font-sans selection:bg-brand-red selection:text-white antialiased relative overflow-x-hidden">
+
+  <!-- Top Reading Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3.5 rounded-xl bg-surface-900 border border-brand-red text-white shadow-2xl backdrop-blur-xl text-xs font-mono font-bold">
+    <i data-lucide="check-circle" class="w-4 h-4 text-brand-red"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- TOP HEADER (High-Tech Editorial Glass Navigation) -->
+  <header class="border-b border-white/[0.08] bg-surface-950/85 sticky top-0 z-40 backdrop-blur-xl transition-all">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Top Left Label (Clean Editorial Signature, Zero Recording Dot) -->
+      <a href="#hero-section" class="block cursor-pointer group" title="Mathan Dinesh — Back to top">
+        <span class="text-xs font-mono font-bold tracking-widest text-brand-red uppercase block group-hover:text-red-400 transition-colors">Full-Stack Developer</span>
+        <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">AI & Deep Learning Engineer</span>
+      </a>
+
+      <!-- Center Floating Glass Pill Navigation -->
+      <nav class="hidden md:flex items-center gap-1 p-1.5 rounded-full bg-surface-900/80 border border-white/[0.08] backdrop-blur-xl shadow-inner">
+        <a href="#projects" class="px-4 py-1.5 rounded-full text-xs font-mono font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all tracking-wider">
+          Projects
+        </a>
+        <a href="#capabilities" class="px-4 py-1.5 rounded-full text-xs font-mono font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all tracking-wider">
+          Capabilities
+        </a>
+        <a href="#process" class="px-4 py-1.5 rounded-full text-xs font-mono font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all tracking-wider">
+          Process
+        </a>
+        <a href="#contact" class="px-4 py-1.5 rounded-full text-xs font-mono font-medium text-slate-300 hover:text-white hover:bg-white/[0.08] transition-all tracking-wider">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Top Right Actions & Status Pill -->
+      <div class="flex items-center gap-3.5">
+        <span class="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-slate-300 px-3.5 py-1.5 rounded-full bg-surface-900/80 border border-white/[0.08] shadow-sm">
+          <span class="text-brand-red font-bold">✦</span>
+          <span>Available for Opportunities</span>
+        </span>
+        <a href="#contact" class="btn-action inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-red hover:bg-red-600 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-brand-red/25 hover:shadow-brand-red/40 hover:scale-[1.03]">
+          <span>Let's Talk</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main class="max-w-7xl mx-auto px-6 py-12 space-y-28">
+
+    <!-- HERO SECTION (EXACT REPLICA OF PINTEREST PIN 1: RAYHAN ADITYA STYLE) -->
+    <div id="hero" class="absolute -top-28 left-0 pointer-events-none"></div>
+    <section id="hero-section" class="relative pt-6 sm:pt-10 pb-12 overflow-hidden border-b border-white/[0.08]">
+      
+      <!-- GIANT BACKGROUND TEXT: "MATHAN DINESH" WITH "Hi, I'm" (BEHIND SUBJECT HEAD & SHOULDERS) -->
+      <div id="hero-bg-container" class="absolute inset-x-0 top-1 sm:top-2 flex flex-col items-center justify-start select-none pointer-events-none z-0">
+        <span class="kinetic-greeting font-handwriting text-3xl sm:text-5xl text-brand-red block -mb-2 sm:-mb-3 tracking-wide pointer-events-auto">Hi, I'm</span>
+        <div id="hero-bg-text" class="hero-bg-text flex justify-center tracking-tight pointer-events-auto cursor-pointer" title="Click to replay letter reveal">
+          <span class="p-char" style="--idx: 0">M</span>
+          <span class="p-char" style="--idx: 1">A</span>
+          <span class="p-char" style="--idx: 2">T</span>
+          <span class="p-char" style="--idx: 3">H</span>
+          <span class="p-char" style="--idx: 4">A</span>
+          <span class="p-char" style="--idx: 5">N</span>
+          <span class="p-char mx-2 sm:mx-3" style="--idx: 6">&nbsp;</span>
+          <span class="p-char" style="--idx: 7">D</span>
+          <span class="p-char" style="--idx: 8">I</span>
+          <span class="p-char" style="--idx: 9">N</span>
+          <span class="p-char" style="--idx: 10">E</span>
+          <span class="p-char" style="--idx: 11">S</span>
+          <span class="p-char" style="--idx: 12">H</span>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-end relative z-10 pt-10 sm:pt-14">
+        
+        <!-- Left Column: Name & Intro -->
+        <div class="lg:col-span-4 space-y-6 pb-6 z-20 reveal">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 text-brand-red text-xs font-mono font-bold tracking-wider uppercase">
+              <span class="text-brand-red text-xs font-bold">✦</span>
+              <span>Full-Stack Developer &bull; AI Creator</span>
+            </div>
+            <h2 class="font-display text-4xl sm:text-5xl font-extrabold text-white tracking-tight uppercase leading-[0.95]">
+              Crafting<br/><span class="text-brand-red">Intelligent Systems</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+              I architect end-to-end full-stack web applications and computer vision deep learning systems with modern craft, clean code, and user empathy.
+            </p>
+          </div>
+
+          <!-- Status Badge -->
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-slate-400">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-red"></i>
+            <span>Based in Coimbatore, India • B.Tech IT</span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex items-center gap-4 pt-2">
+            <a href="#projects" class="btn-action px-6 py-3 rounded-lg bg-white text-surface-950 font-mono font-bold text-xs uppercase tracking-wider hover:bg-slate-200 transition-all flex items-center gap-2 shadow-lg shadow-white/10">
+              <span>View Projects</span>
+              <i data-lucide="arrow-down-right" class="w-4 h-4 text-surface-950"></i>
+            </a>
+            <a href="#contact" class="btn-action px-6 py-3 rounded-lg border border-white/20 text-white font-mono font-bold text-xs uppercase tracking-wider hover:border-brand-red transition-all">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Column: Cinematic Portrait with Red Light Kept & Zero Lines -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-end relative z-10 -mb-12 sm:-mb-14 reveal delay-100">
+
+          <!-- Frameless Portrait Container with Ambient Halo -->
+          <div class="relative w-full max-w-lg flex flex-col items-center" id="portrait-stage">
+            
+            <!-- Ambient Breathing Crimson Glow -->
+            <div class="hero-ambient-glow"></div>
+
+            <div class="w-full flex justify-center relative z-10">
+              <!-- Hero Portrait - Mathan's Authentic Edited Portrait (Zero Glitches, Pure Cutout) -->
+              <img 
+                id="hero-portrait-img"
+                src="assets/mathan_edited_frameless.png?v=15" 
+                alt="Mathan Dinesh - Full-Stack Developer & AI Engineer" 
+                class="w-auto h-[540px] sm:h-[620px] lg:h-[680px] object-contain pointer-events-none select-none"
+              />
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Tagline & Vertical Stats Counter (Like Pinterest Pin) -->
+        <div class="lg:col-span-3 space-y-8 pb-8 z-20 reveal delay-200">
+          
+          <div class="flex items-start gap-3">
+            <span class="text-brand-red text-sm font-bold">✦</span>
+            <p class="text-xs font-mono text-slate-300 uppercase leading-relaxed">
+              Turning complex algorithms into intelligent, high-impact digital experiences.
+            </p>
+          </div>
+
+          <!-- Vertical Stats Column (Exact Style from Reference) -->
+          <div class="space-y-6 pt-4 border-t border-white/[0.08]">
+            
+            <div class="stat-box group">
+              <div class="font-display text-4xl text-brand-red leading-none flex items-center">
+                <span class="counter-number" data-target="4">0</span>
+                <span>+</span>
+              </div>
+              <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400 group-hover:text-slate-200 transition-colors">Projects Completed</div>
+            </div>
+
+            <div>
+              <div class="font-display text-4xl text-brand-red leading-none">SIH '24</div>
+              <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Smart India Hackathon</div>
+            </div>
+
+            <div>
+              <div class="font-display text-4xl text-brand-red leading-none">NVIDIA</div>
+              <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Deep Learning Workshop</div>
+            </div>
+
+            <div class="stat-box group">
+              <div class="font-display text-4xl text-brand-red leading-none">
+                <span class="counter-number" data-target="2026">2020</span>
+              </div>
+              <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400 group-hover:text-slate-200 transition-colors">B.Tech IT • SREC</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: SELECTED PROJECTS (CYBER-TACTICAL ARCHIVE) -->
+    <section id="projects" class="relative space-y-8 scroll-mt-28 pt-4 overflow-hidden">
+      
+      <!-- Cyberpunk Curtain Split Reveal Shutter -->
+      <div id="curtain-shutter" class="curtain-shutter">
+        <div class="curtain-blade curtain-blade-left"></div>
+        <div class="curtain-blade curtain-blade-right"></div>
+        <div class="curtain-laser-line"></div>
+      </div>
+
+      <!-- Section Header -->
+      <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 reveal accent-line-draw">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">
+            <span class="text-brand-red font-bold">✦</span>
+            <span>// Selected Projects</span>
+          </div>
+          <h2 class="font-syne text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase kinetic-heading">
+            <span class="kinetic-word">Engineering</span>
+            <span class="kinetic-word text-brand-red">Archive</span>
+          </h2>
+        </div>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-action text-xs font-mono text-slate-300 hover:text-white transition-colors flex items-center gap-2 uppercase px-3.5 py-2 rounded-lg border border-white/10 hover:border-brand-red bg-surface-900/60 shadow-sm">
+          <span>GitHub Hub</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-brand-red"></i>
+        </a>
+      </div>
+
+      <!-- Project Cards Grid with Perspective 3D Tunnel -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 perspective-tunnel-stage">
+
+        <!-- Project 01: Cartivo -->
+        <div class="project-card-cyber pinterest-card p-6 flex flex-col justify-between group cursor-pointer reveal delay-100" onclick="copyProject('Cartivo')">
+          <div class="space-y-4">
+            <!-- Mockup Box -->
+            <div class="project-mockup relative h-44 rounded-xl bg-surface-950 border border-white/[0.08] p-4 flex flex-col justify-between group-hover:border-brand-red/60 transition-colors overflow-hidden">
+              <div class="flex justify-between items-center text-[10px] font-mono uppercase z-10">
+                <span class="inline-flex items-center gap-1.5 text-slate-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  STORE ACTIVE
+                </span>
+                <span class="text-brand-red font-bold tracking-wider">v2.4 STABLE</span>
+              </div>
+              <div class="text-center space-y-2 z-10">
+                <div class="w-10 h-10 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center mx-auto text-brand-red shadow-lg shadow-brand-red/10 group-hover:scale-110 transition-transform">
+                  <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-syne font-extrabold text-xl text-white tracking-wide">CARTIVO</h4>
+                  <div class="inline-flex items-center gap-2 px-2.5 py-0.5 mt-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-slate-300">
+                    <span class="text-emerald-400">● 3 Items</span>
+                    <span class="text-slate-600">|</span>
+                    <span class="text-white font-bold">$148.50</span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-[9px] font-mono text-slate-400 z-10">React.js • Tailwind • State Sync</div>
+            </div>
+
+            <!-- Title & Number -->
+            <div class="pt-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-2xl font-extrabold text-brand-red">01</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 group-hover:text-brand-red group-hover:translate-x-1 transition-all"></i>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white uppercase tracking-wide group-hover:text-brand-red transition-colors pt-1">
+                Cartivo Platform
+              </h3>
+              <p class="font-outfit text-xs text-slate-400 leading-relaxed pt-1">
+                Full-stack commerce engine with client-side state synchronization, catalog filtration, and responsive checkout flows.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 02: Pesticide Defect Detection -->
+        <div class="project-card-cyber pinterest-card p-6 flex flex-col justify-between group cursor-pointer reveal delay-200" onclick="copyProject('YOLOv8 Pesticide Detection')">
+          <div class="space-y-4">
+            <!-- Mockup Box with Corner Viewfinder Brackets & Live Radar Scan -->
+            <div class="project-mockup relative h-44 rounded-xl bg-surface-950 border border-white/[0.08] p-4 flex flex-col justify-between group-hover:border-brand-red/60 transition-colors overflow-hidden">
+              <!-- Tactical Viewfinder Corner Brackets -->
+              <span class="absolute top-2 left-2 w-2.5 h-2.5 border-t-2 border-l-2 border-brand-red pointer-events-none z-20"></span>
+              <span class="absolute top-2 right-2 w-2.5 h-2.5 border-t-2 border-r-2 border-brand-red pointer-events-none z-20"></span>
+              <span class="absolute bottom-2 left-2 w-2.5 h-2.5 border-b-2 border-l-2 border-brand-red pointer-events-none z-20"></span>
+              <span class="absolute bottom-2 right-2 w-2.5 h-2.5 border-b-2 border-r-2 border-brand-red pointer-events-none z-20"></span>
+
+              <!-- Live Sweeping Radar Scan Line -->
+              <div class="radar-scan-line z-10 pointer-events-none"></div>
+
+              <div class="flex justify-between items-center text-[10px] font-mono uppercase z-10">
+                <span class="inline-flex items-center gap-1.5 text-red-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brand-red animate-ping"></span>
+                  REC 60 FPS
+                </span>
+                <span class="text-brand-red font-bold font-mono">94.2% PRECISION</span>
+              </div>
+              <div class="text-center space-y-1.5 z-10">
+                <div class="inline-block px-3 py-1 rounded border border-brand-red/50 bg-brand-red/10 shadow-sm shadow-brand-red/20 group-hover:scale-105 transition-transform">
+                  <div class="text-[9px] font-mono text-brand-red uppercase font-bold tracking-wider">DEFECT DETECTED [94.2%]</div>
+                  <div class="font-syne font-extrabold text-base text-white tracking-wide">YOLOv8 VISION</div>
+                </div>
+                <p class="text-[9px] font-mono text-slate-400">Object Classification Matrix</p>
+              </div>
+              <div class="text-[9px] font-mono text-slate-400 z-10">Python • OpenCV • Deep Learning</div>
+            </div>
+
+            <!-- Title & Number -->
+            <div class="pt-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-2xl font-extrabold text-brand-red">02</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 group-hover:text-brand-red group-hover:translate-x-1 transition-all"></i>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white uppercase tracking-wide group-hover:text-brand-red transition-colors pt-1">
+                Pesticide Defect Detection
+              </h3>
+              <p class="font-outfit text-xs text-slate-400 leading-relaxed pt-1">
+                Deep learning defect and pesticide residue identification system for agricultural produce safety benchmarking.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 03: Bus Ticket Booking System -->
+        <div class="project-card-cyber pinterest-card p-6 flex flex-col justify-between group cursor-pointer reveal delay-300" onclick="copyProject('Bus Ticket Booking')">
+          <div class="space-y-4">
+            <!-- Mockup Box with Live Animated Transit Path -->
+            <div class="project-mockup relative h-44 rounded-xl bg-surface-950 border border-white/[0.08] p-4 flex flex-col justify-between group-hover:border-brand-red/60 transition-colors overflow-hidden">
+              <div class="flex justify-between items-center text-[10px] font-mono uppercase z-10">
+                <span class="text-slate-400">AGILE SPRINT #04</span>
+                <span class="text-brand-red font-bold font-mono">JIRA SCRUM</span>
+              </div>
+              <div class="w-full px-2 py-2 bg-surface-900/90 rounded-lg border border-white/5 space-y-1.5 z-10">
+                <div class="flex items-center justify-between text-[9px] font-mono">
+                  <span class="text-slate-300 font-bold">COIMBATORE</span>
+                  <span class="text-brand-red font-bold">CHENNAI</span>
+                </div>
+                <div class="relative w-full h-1.5 bg-white/10 rounded-full flex items-center overflow-hidden">
+                  <div class="transit-pulse-dot w-3 h-3 rounded-full bg-brand-red shadow-[0_0_8px_#ef4444]"></div>
+                </div>
+                <div class="flex justify-between text-[8px] font-mono text-slate-400">
+                  <span>TRANSIT EXPRESS</span>
+                  <span class="text-emerald-400 font-bold">38/42 BOOKED</span>
+                </div>
+              </div>
+              <div class="text-[9px] font-mono text-slate-400 z-10">JavaScript • Database • Scrum Flow</div>
+            </div>
+
+            <!-- Title & Number -->
+            <div class="pt-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-2xl font-extrabold text-brand-red">03</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 group-hover:text-brand-red group-hover:translate-x-1 transition-all"></i>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white uppercase tracking-wide group-hover:text-brand-red transition-colors pt-1">
+                Bus Ticket Booking System
+              </h3>
+              <p class="font-outfit text-xs text-slate-400 leading-relaxed pt-1">
+                Full-stack transit portal engineered using Agile Scrum methodologies in Jira with seat allocation and route tracking.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 04: Bio-Sonic Pest Deterrent Grid -->
+        <div class="project-card-cyber pinterest-card p-6 flex flex-col justify-between group cursor-pointer reveal delay-400" onclick="copyProject('Bio-Sonic Pest Deterrent')">
+          <div class="space-y-4">
+            <!-- Mockup Box with Live Animated Frequency Spectrum -->
+            <div class="project-mockup relative h-44 rounded-xl bg-surface-950 border border-white/[0.08] p-4 flex flex-col justify-between group-hover:border-brand-red/60 transition-colors overflow-hidden">
+              <div class="flex justify-between items-center text-[10px] font-mono uppercase z-10">
+                <span class="text-slate-400">ACOUSTIC SHIELD</span>
+                <span class="text-brand-red font-bold font-mono">22kHz–45kHz</span>
+              </div>
+              <div class="text-center space-y-2 z-10">
+                <!-- Soundwave Visualizer Bars -->
+                <div class="flex items-center justify-center gap-1.5 h-7">
+                  <span class="soundwave-bar" style="animation-delay: 0s;"></span>
+                  <span class="soundwave-bar" style="animation-delay: 0.2s;"></span>
+                  <span class="soundwave-bar" style="animation-delay: 0.4s;"></span>
+                  <span class="soundwave-bar" style="animation-delay: 0.15s;"></span>
+                  <span class="soundwave-bar" style="animation-delay: 0.35s;"></span>
+                  <span class="soundwave-bar" style="animation-delay: 0.05s;"></span>
+                  <span class="soundwave-bar" style="animation-delay: 0.25s;"></span>
+                </div>
+                <h4 class="font-syne font-extrabold text-sm text-white tracking-wide">BIO-SONIC GRID</h4>
+                <p class="text-[9px] font-mono text-slate-400">Ultrasonic Crop Defense</p>
+              </div>
+              <div class="text-[9px] font-mono text-slate-400 z-10">Acoustic • Non-Toxic • Hardware</div>
+            </div>
+
+            <!-- Title & Number -->
+            <div class="pt-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-2xl font-extrabold text-brand-red">04</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 group-hover:text-brand-red group-hover:translate-x-1 transition-all"></i>
+              </div>
+              <h3 class="font-syne font-bold text-lg text-white uppercase tracking-wide group-hover:text-brand-red transition-colors pt-1">
+                Bio-Sonic Deterrent Grid
+              </h3>
+              <p class="font-outfit text-xs text-slate-400 leading-relaxed pt-1">
+                Eco-friendly acoustic pest deterrent utilizing targeted ultrasonic sound frequencies to safeguard agricultural crops cleanly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: CAPABILITIES & TECH ARSENAL -->
+    <section id="capabilities" class="relative space-y-8 scroll-mt-28 pt-8 overflow-hidden">
+      
+      <!-- Section Header -->
+      <div class="flex items-center justify-between border-b border-white/[0.08] pb-4 reveal accent-line-draw">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">
+            <span class="text-brand-red font-bold">✦</span>
+            <span>// TECHNICAL ARSENAL</span>
+          </div>
+          <h2 class="font-syne text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase kinetic-heading">
+            <span class="kinetic-word">Capabilities</span>
+            <span class="kinetic-word text-brand-red">& Stack</span>
+          </h2>
+        </div>
+        <!-- Orbital Gyroscope Reactor Core -->
+        <div class="orbital-reactor" title="Active Core Reactor">
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+          <div class="orbit-core"></div>
+        </div>
+      </div>
+
+      <!-- 2-Column Architectural Layout -->
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Core Engineering Domains & Verified Credentials (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6 reveal delay-100">
+          
+          <!-- Domain 1: AI & Deep Learning -->
+          <div class="p-6 rounded-2xl bg-surface-900/60 border border-white/10 hover:border-brand-red/40 transition-all space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase text-brand-red font-bold tracking-wider flex items-center gap-2">
+                <i data-lucide="brain-circuit" class="w-4 h-4 text-brand-red"></i>
+                ✦ AI & Deep Learning Engineering
+              </span>
+              <span class="text-[10px] font-mono text-slate-400">Core Specialization</span>
+            </div>
+            <p class="text-xs font-outfit text-slate-300 leading-relaxed">
+              Specialized in high-accuracy object detection, real-time edge computer vision inference, neural network architectures, and custom dataset curation.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono pt-1 tech-domain-group">
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">Python</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">YOLOv8</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">OpenCV</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">Computer Vision</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">Neural Networks</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">PyTorch</span>
+            </div>
+          </div>
+
+          <!-- Domain 2: Full-Stack Architecture -->
+          <div class="p-6 rounded-2xl bg-surface-900/60 border border-white/10 hover:border-brand-red/40 transition-all space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase text-brand-red font-bold tracking-wider flex items-center gap-2">
+                <i data-lucide="layers" class="w-4 h-4 text-brand-red"></i>
+                ✦ Full-Stack Architecture & Cloud Services
+              </span>
+              <span class="text-[10px] font-mono text-slate-400">Modern Production</span>
+            </div>
+            <p class="text-xs font-outfit text-slate-300 leading-relaxed">
+              Engineering responsive component-driven frontends, RESTful microservices, structured database schemas, and streamlined Agile delivery.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono pt-1 tech-domain-group">
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">React.js</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">JavaScript ES6+</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">Tailwind CSS</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">RESTful APIs</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">Jira (Scrum)</span>
+              <span class="tech-chip px-3 py-1.5 rounded-lg bg-surface-950 border border-white/10 text-slate-200 cursor-default">Git / GitHub</span>
+            </div>
+          </div>
+
+          <!-- Verified Credentials (SIH 2024 & NVIDIA GPU) -->
+          <div class="grid sm:grid-cols-2 gap-4 pt-1">
+            <div class="p-4 rounded-xl bg-surface-900/60 border border-white/10 hover:border-brand-red/40 transition-all flex items-center gap-3.5 group">
+              <div class="w-9 h-9 rounded-lg bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-white text-xs block truncate">Smart India Hackathon</span>
+                  <span class="px-1.5 py-0.2 rounded bg-brand-red/20 text-brand-red text-[9px] font-bold">2024</span>
+                </div>
+                <span class="text-[10px] text-slate-400 block pt-0.5">National 36-hr Sprint Participant</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface-900/60 border border-white/10 hover:border-brand-red/40 transition-all flex items-center gap-3.5 group">
+              <div class="w-9 h-9 rounded-lg bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="cpu" class="w-4 h-4"></i>
+              </div>
+              <div class="overflow-hidden">
+                <div class="flex items-center gap-2">
+                  <span class="font-bold text-white text-xs block truncate">NVIDIA Deep Learning</span>
+                  <span class="px-1.5 py-0.2 rounded bg-brand-red/20 text-brand-red text-[9px] font-bold">GPU</span>
+                </div>
+                <span class="text-[10px] text-slate-400 block pt-0.5">Hands-on AI & Neural Networks</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Linguistic Fluency & The Redesigned Engineering Manifesto Card (5 Cols) -->
+        <div class="lg:col-span-5 space-y-6 reveal delay-200">
+          
+          <!-- Linguistic Fluency Meter Card -->
+          <div class="p-6 rounded-2xl bg-surface-900/60 border border-white/10 space-y-4">
+            <span class="text-xs font-mono uppercase text-brand-red font-bold tracking-wider block">✦ Global Linguistic Fluency</span>
+            <div class="space-y-3.5 font-mono text-xs">
+              <div class="space-y-1.5">
+                <div class="flex justify-between">
+                  <span class="text-white font-medium">English</span>
+                  <span class="text-brand-red font-bold font-mono"><span class="counter-fluency" data-target="95">0</span>% • Professional</span>
+                </div>
+                <div class="fluency-bar"><div class="fluency-fill" data-width="95%" style="--target-width: 95%;"></div></div>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between">
+                  <span class="text-white font-medium">Tamil</span>
+                  <span class="text-brand-red font-bold font-mono"><span class="counter-fluency" data-target="100">0</span>% • Native</span>
+                </div>
+                <div class="fluency-bar"><div class="fluency-fill" data-width="100%" style="--target-width: 100%;"></div></div>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex justify-between">
+                  <span class="text-white font-medium">Kannada</span>
+                  <span class="text-brand-red font-bold font-mono"><span class="counter-fluency" data-target="75">0</span>% • Conversational</span>
+                </div>
+                <div class="fluency-bar"><div class="fluency-fill" data-width="75%" style="--target-width: 75%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Redesigned Engineering Manifesto Card (Frosted Noir Glass with Crimson Glow) -->
+          <div class="flex flex-col justify-between p-7 rounded-2xl bg-gradient-to-br from-[#1c080b]/90 via-surface-950/90 to-surface-900/90 text-white shadow-2xl relative overflow-hidden border border-red-500/25 group quote-card-reveal">
+            <!-- Ambient Glowing Ruby Mesh Orb Inside -->
+            <div class="quote-mesh-orb"></div>
+            <div class="space-y-4 relative z-10">
+              <div class="font-serif text-5xl leading-none text-red-400 opacity-50 select-none">“</div>
+              <p class="font-syne text-lg sm:text-xl font-bold leading-snug tracking-tight text-white drop-shadow-sm">
+                Good software is not just how clean the code looks, but how effectively it solves real-world human problems.
+              </p>
+              <div class="pt-2">
+                <span class="font-handwriting text-2xl sm:text-3xl text-red-100 block">Mathan Dinesh</span>
+                <span class="text-[10px] font-mono text-red-300 uppercase tracking-widest block pt-0.5">B.Tech IT • SREC Coimbatore</span>
+              </div>
+            </div>
+            <div class="pt-6 relative z-10 border-t border-red-500/30 mt-4 flex items-center justify-between text-xs font-mono">
+              <span class="text-red-200 font-bold uppercase tracking-wider text-[11px]">
+                Engineering with Purpose ✦
+              </span>
+              <span class="text-slate-400 text-[10px]">2026 Ready</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: ENGINEERING METHODOLOGY & WORKFLOW -->
+    <section id="process" class="relative space-y-8 scroll-mt-28 pt-10 overflow-hidden">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/[0.08] pb-4 reveal accent-line-draw gap-3">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">
+            <span class="text-brand-red font-bold">✦</span>
+            <span>// METHODOLOGY & WORKFLOW</span>
+          </div>
+          <h2 class="font-syne text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase kinetic-heading">
+            <span class="kinetic-word">Engineering</span>
+            <span class="kinetic-word text-brand-red">Process</span>
+          </h2>
+        </div>
+        <p class="text-xs font-outfit text-slate-400 max-w-md">
+          A systematic 5-phase protocol taking ambitious ideas from initial discovery to high-throughput, hardened production deployment.
+        </p>
+      </div>
+
+      <!-- Process Pipeline Timeline Track -->
+      <div class="relative space-y-4 pl-3 sm:pl-4 reveal delay-100 max-w-4xl mx-auto" id="process-timeline">
+        <!-- Connecting Vertical Line with Animated Light Beam -->
+        <div class="process-line" id="process-line-bar"></div>
+        <div class="process-laser-dot" id="process-laser-dot"></div>
+
+        <!-- Step 01 -->
+        <div class="step-item group relative z-10 cursor-pointer">
+          <div class="step-node">01</div>
+          <div class="space-y-1.5 flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="font-outfit text-sm font-bold text-white uppercase group-hover:text-brand-red transition-colors">
+                Discover & Scope
+              </span>
+              <span class="phase-badge">Phase 01 // Discovery</span>
+            </div>
+            <p class="font-outfit text-xs text-slate-300 leading-relaxed">
+              Synthesizing client requirements, mapping data flows, analyzing edge cases, and defining modular engineering milestones with explicit SLA targets.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">SRS Architecture</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Data-Flow Diagram</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Milestone Roadmap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="step-item group relative z-10 cursor-pointer">
+          <div class="step-node">02</div>
+          <div class="space-y-1.5 flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="font-outfit text-sm font-bold text-white uppercase group-hover:text-brand-red transition-colors">
+                Architect & Plan
+              </span>
+              <span class="phase-badge">Phase 02 // Architecture</span>
+            </div>
+            <p class="font-outfit text-xs text-slate-300 leading-relaxed">
+              Designing relational database schemas, component topology, authentication boundary checks, and structuring sprint tasks inside Jira with Scrum precision.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Schema Design</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Jira Sprints</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Component Hierarchy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="step-item group relative z-10 cursor-pointer">
+          <div class="step-node">03</div>
+          <div class="space-y-1.5 flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="font-outfit text-sm font-bold text-white uppercase group-hover:text-brand-red transition-colors">
+                Develop Code
+              </span>
+              <span class="phase-badge">Phase 03 // Full-Stack</span>
+            </div>
+            <p class="font-outfit text-xs text-slate-300 leading-relaxed">
+              Engineering responsive frontend interfaces with React and Tailwind CSS, coupled with high-throughput backend services, clean APIs, and git version control.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">React + Vite</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">RESTful Endpoints</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Clean Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 04 -->
+        <div class="step-item group relative z-10 cursor-pointer">
+          <div class="step-node">04</div>
+          <div class="space-y-1.5 flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="font-outfit text-sm font-bold text-white uppercase group-hover:text-brand-red transition-colors">
+                Train & Benchmark
+              </span>
+              <span class="phase-badge">Phase 04 // AI Vision</span>
+            </div>
+            <p class="font-outfit text-xs text-slate-300 leading-relaxed">
+              Training deep learning vision models (YOLOv8), tuning hyperparameters, validating mAP precision metrics, and optimizing on-device inference speeds.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">YOLOv8 Weights</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">mAP Precision 94%+</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">OpenCV Pipelines</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 05 -->
+        <div class="step-item group relative z-10 cursor-pointer">
+          <div class="step-node">05</div>
+          <div class="space-y-1.5 flex-1 min-w-0">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="font-outfit text-sm font-bold text-white uppercase group-hover:text-brand-red transition-colors">
+                Deliver & Deploy
+              </span>
+              <span class="phase-badge">Phase 05 // CI/CD Production</span>
+            </div>
+            <p class="font-outfit text-xs text-slate-300 leading-relaxed">
+              Load optimization, automated build pipelines, production hardening, and continuous deployment of rock-solid web artifacts with 99.9% uptime.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1 text-[10px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Dockerized Build</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Automated CI/CD</span>
+              <span class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">Performance Tuned</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: LET'S WORK TOGETHER (BOTTOM FOOTER CONTACT BANNER) -->
+    <section id="contact" class="relative pinterest-card p-8 sm:p-14 lg:p-16 min-h-[75vh] flex flex-col justify-center border-t-2 border-t-brand-red reveal scroll-mt-28 overflow-hidden my-12">
+      
+      <!-- SVG Filter for Liquid Chromatic Distortion -->
+      <svg class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+        <filter id="liquidFilter">
+          <feTurbulence id="liquidTurbulence" type="fractalNoise" baseFrequency="0.015 0.015" numOctaves="2" result="warp" />
+          <feDisplacementMap id="liquidDisplacement" in="SourceGraphic" in2="warp" scale="0" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+
+      <!-- Black Hole Gravitational Singularity Accretion Core -->
+      <div class="blackhole-singularity-wrap pointer-events-none">
+        <div class="blackhole-core"></div>
+        <div class="blackhole-accretion-disk"></div>
+        <div class="blackhole-lensing-ring"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+        
+        <!-- Left: Headline & Bio -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">
+            <span class="text-brand-red font-bold">✦</span>
+            <span>// INITIATE COLLABORATION</span>
+          </div>
+          <h2 class="font-syne text-4xl sm:text-5xl font-extrabold text-white tracking-tight uppercase leading-none kinetic-heading">
+            <span class="kinetic-word block">Let's Work</span>
+            <span class="kinetic-word text-brand-red block legendary-headline liquid-headline cursor-pointer">Together</span>
+          </h2>
+          <p class="font-outfit text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md">
+            I am currently open for software engineering opportunities, internships, and technical collaborations. Let's engineer something exceptional that delivers tangible impact.
+          </p>
+          <div class="pt-2">
+            <a href="mailto:mathandinesh003@gmail.com" class="btn-action inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-brand-red hover:bg-red-700 text-white font-mono text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-brand-red/25 hover:shadow-brand-red/40 hover:scale-[1.02]">
+              <span>Send An Email</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Contact Details List (Interactive Cards with Copy & Link) -->
+        <div class="lg:col-span-4 space-y-3 font-mono text-xs">
+          
+          <button onclick="copyEmail()" class="contact-card-interactive w-full flex items-center justify-between p-3.5 rounded-xl bg-surface-950 border border-white/10 hover:border-brand-red transition-all text-left group">
+            <div class="flex items-center gap-3 overflow-hidden">
+              <div class="w-9 h-9 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <div class="overflow-hidden">
+                <span class="text-[10px] text-slate-500 uppercase block font-mono">EMAIL</span>
+                <span class="font-outfit text-xs text-white truncate block group-hover:text-brand-red transition-colors">mathandinesh003@gmail.com</span>
+              </div>
+            </div>
+            <div class="text-[10px] font-mono text-slate-500 group-hover:text-brand-red flex items-center gap-1 shrink-0">
+              <span>Copy</span>
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </div>
+          </button>
+
+          <a href="tel:+918925148149" class="contact-card-interactive w-full flex items-center justify-between p-3.5 rounded-xl bg-surface-950 border border-white/10 hover:border-brand-red transition-all text-left group block">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-500 uppercase block font-mono">PHONE / DIRECT CALL</span>
+                <span class="font-outfit text-xs text-white group-hover:text-brand-red transition-colors">+91 89251 48149</span>
+              </div>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-brand-red transition-colors shrink-0"></i>
+          </a>
+
+          <a href="https://wa.me/918925148149" target="_blank" rel="noopener noreferrer" class="contact-card-interactive w-full flex items-center justify-between p-3.5 rounded-xl bg-surface-950 border border-white/10 hover:border-brand-red transition-all text-left group block">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-500 uppercase block font-mono">WHATSAPP</span>
+                <span class="font-outfit text-xs text-white group-hover:text-brand-red transition-colors">Instant Chat Available</span>
+              </div>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-brand-red transition-colors shrink-0"></i>
+          </a>
+
+          <div class="w-full flex items-center gap-3 p-3.5 rounded-xl bg-surface-950 border border-white/10 text-left">
+            <div class="w-9 h-9 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <span class="text-[10px] text-slate-500 uppercase block font-mono">LOCATION</span>
+              <span class="font-outfit text-xs text-white">Coimbatore, Tamil Nadu, India</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Status / Mini Profile Card -->
+        <div class="lg:col-span-3 p-6 rounded-2xl bg-surface-950 border border-white/10 space-y-4 text-center relative overflow-hidden group hover:border-brand-red/40 transition-colors">
+          <div class="w-14 h-14 rounded-full bg-brand-red/20 border border-brand-red/40 text-brand-red flex items-center justify-center mx-auto font-syne font-extrabold text-xl shadow-lg shadow-brand-red/10 group-hover:scale-105 transition-transform avatar-ring-glow">
+            MD
+          </div>
+          <div>
+            <h4 class="font-syne font-bold text-lg text-white uppercase tracking-wide">Mathan Dinesh</h4>
+            <p class="font-outfit text-xs text-slate-400 pt-0.5">B.Tech IT • SREC Class of '26</p>
+          </div>
+          <div class="pt-3 border-t border-white/10">
+            <span class="inline-flex items-center gap-2 text-[11px] font-mono text-brand-red font-bold">
+              <span class="text-brand-red font-bold">✦</span>
+              Available for Summer 2025/2026 Roles
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/[0.08] py-8 bg-surface-950">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <p>© 2026 Mathan Dinesh. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="#hero-section" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;" class="hover:text-white transition-colors">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Copy Email Toast
+    function copyEmail() {
+      const email = "mathandinesh003@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        showToast("Email copied to clipboard!");
+      }).catch(() => {
+        showToast("mathandinesh003@gmail.com");
+      });
+    }
+
+    function copyProject(name) {
+      showToast(`${name} selected. Reach out for repo/demo access!`);
+    }
+
+    function switchHeroPose(src, btn) {
+      const img = document.getElementById('hero-portrait-img');
+      if (img) {
+        img.style.opacity = '0.4';
+        setTimeout(() => {
+          img.src = src;
+          img.style.opacity = '1';
+        }, 150);
+      }
+      document.querySelectorAll('.pose-btn').forEach(b => {
+        b.classList.remove('bg-brand-red', 'text-white', 'font-bold');
+        b.classList.add('text-slate-400');
+      });
+      btn.classList.add('bg-brand-red', 'text-white', 'font-bold');
+      btn.classList.remove('text-slate-400');
+    }
+
+
+    // 1. Fluid Parallax & Fade on Scroll (100% Rock-Solid, No Letter Float)
+    const heroPortrait = document.getElementById('hero-portrait-img');
+    const heroBgText = document.getElementById('hero-bg-text');
+    const heroBgContainer = document.getElementById('hero-bg-container') || heroBgText;
+    const progressBar = document.getElementById('scroll-progress');
+
+    let targetY = window.pageYOffset || document.documentElement.scrollTop;
+    let currentY = targetY;
+    let isParallaxLooping = false;
+
+    // Snappy One-Time Letter Arrival Replay on Click
+    if (heroBgText) {
+      heroBgText.addEventListener('click', () => {
+        const chars = heroBgText.querySelectorAll('.p-char');
+        chars.forEach(c => {
+          c.style.animation = 'none';
+          void c.offsetWidth;
+          c.style.animation = '';
+        });
+      });
+    }
+
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollDirection = 'down';
+    let hasScrolledPastHero = false;
+
+    function renderSmoothParallax() {
+      targetY = window.pageYOffset || document.documentElement.scrollTop;
+      currentY += (targetY - currentY) * 0.45;
+
+      if (progressBar) {
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const pct = docHeight > 0 ? (currentY / docHeight) * 100 : 0;
+        progressBar.style.width = pct.toFixed(2) + '%';
+      }
+
+      // Smoothly fade out background wordmark and label as user scrolls past hero so it never bleeds into second page
+      if (heroBgContainer) {
+        const fade = Math.min(1, Math.max(0, currentY / 380));
+        heroBgContainer.style.opacity = (0.92 * (1 - fade)).toFixed(2);
+        heroBgContainer.style.visibility = fade >= 1 ? 'hidden' : 'visible';
+      }
+
+      // Replay snappy letter wave on MATHAN DINESH when scrolling all the way back to top
+      if (currentY > 400) {
+        hasScrolledPastHero = true;
+      } else if (currentY < 40 && hasScrolledPastHero) {
+        hasScrolledPastHero = false;
+        if (heroBgText) {
+          const chars = heroBgText.querySelectorAll('.p-char');
+          chars.forEach(c => {
+            c.style.animation = 'none';
+            void c.offsetWidth;
+            c.style.animation = '';
+          });
+        }
+      }
+
+      // Subtle counter-parallax on portrait
+      if (currentY < 1300 && heroPortrait) {
+        heroPortrait.style.transform = `translate3d(0, ${(-currentY * 0.18).toFixed(2)}px, 0)`;
+      }
+
+      // Update Scroll-Driven Dynamic Animations across Sections 2, 3, 4, 5
+      updateScrollDrivenAnimations(currentY);
+      checkScrollReveals();
+
+      let stillMoving = Math.abs(targetY - currentY) > 0.15;
+      if (stillMoving) {
+        requestAnimationFrame(renderSmoothParallax);
+      } else {
+        currentY = targetY;
+        if (heroBgContainer) {
+          const fade = Math.min(1, Math.max(0, targetY / 380));
+          heroBgContainer.style.opacity = (0.92 * (1 - fade)).toFixed(2);
+          heroBgContainer.style.visibility = fade >= 1 ? 'hidden' : 'visible';
+        }
+        if (heroPortrait && targetY < 1300) {
+          heroPortrait.style.transform = `translate3d(0, ${(-targetY * 0.18).toFixed(2)}px, 0)`;
+        }
+        updateScrollDrivenAnimations(targetY);
+        checkScrollReveals();
+        isParallaxLooping = false;
+      }
+    }
+
+    // Scroll-Driven Interactive Laser Stepper & Section Parallax (Bidirectional)
+    function updateScrollDrivenAnimations(scrollY) {
+      // 1. Section 4 Interactive Laser Scrub & Step Activation (Bidirectional Scrubbing)
+      const timeline = document.getElementById('process-timeline');
+      const laserDot = document.getElementById('process-laser-dot');
+      if (timeline && laserDot) {
+        const rect = timeline.getBoundingClientRect();
+        const winH = window.innerHeight;
+        const totalH = rect.height;
+        
+        // Viewport focal trigger center (works seamlessly on scroll DOWN and scroll UP)
+        const focalY = winH * 0.55;
+        const progress = Math.max(0, Math.min(1, (focalY - rect.top) / totalH));
+
+        // Smooth laser dot positioning along timeline
+        const dotTop = 28 + progress * (totalH - 56);
+        laserDot.style.top = `${dotTop.toFixed(1)}px`;
+
+        // Absolute viewport Y coordinate of laser dot
+        const laserAbsoluteY = rect.top + dotTop;
+
+        // Activate step nodes sequentially based on physical laser collision
+        const stepItems = timeline.querySelectorAll('.step-item');
+        stepItems.forEach(item => {
+          const itemRect = item.getBoundingClientRect();
+          if (laserAbsoluteY >= itemRect.top - 10) {
+            item.classList.add('is-active');
+          } else {
+            item.classList.remove('is-active');
+          }
+        });
+      }
+
+      // 2. Ambient Counter-Parallax on Crimson Quote Orb
+      const quoteOrb = document.querySelector('.quote-mesh-orb');
+      if (quoteOrb) {
+        const quoteCard = quoteOrb.closest('.quote-card-reveal');
+        if (quoteCard) {
+          const qRect = quoteCard.getBoundingClientRect();
+          const qOffset = (window.innerHeight / 2) - (qRect.top + qRect.height / 2);
+          quoteOrb.style.transform = `translate3d(${(qOffset * 0.05).toFixed(1)}px, ${(qOffset * 0.08).toFixed(1)}px, 0)`;
+        }
+      }
+    }
+
+    // Run on page load
+    requestAnimationFrame(renderSmoothParallax);
+
+    // Run on scroll with direction detection (Debounced to 60fps/120fps display refresh via RAF)
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      scrollDirection = currentScroll >= lastScrollY ? 'down' : 'up';
+      lastScrollY = currentScroll;
+
+      if (!isParallaxLooping) {
+        isParallaxLooping = true;
+        requestAnimationFrame(renderSmoothParallax);
+      }
+    }, { passive: true });
+
+    // 2. High-Performance Bidirectional Scroll Reveal (Scroll UP & Scroll DOWN)
+    function checkScrollReveals() {
+      const winH = window.innerHeight;
+      const revealElements = document.querySelectorAll(
+        '.reveal, .reveal-card, .kinetic-heading, .quote-card-reveal, .project-card-cyber, #projects, #capabilities, #process, #contact'
+      );
+
+      revealElements.forEach(el => {
+        // Hero section elements stay permanently revealed once loaded
+        if (el.closest('#hero-section')) {
+          el.classList.add('is-revealed');
+          return;
+        }
+
+        const rect = el.getBoundingClientRect();
+        const elH = rect.height || 100;
+        
+        // Exact Direction-Aware Focal Trigger:
+        // When scrolling DOWN: top enters bottom 88% of screen (user watches elements glide up into view)
+        // When scrolling UP: bottom enters top portion of screen deeply enough (at least 35% of element or 160px)
+        // so the user actually watches the entrance animation unfold in front of their eyes!
+        let isInViewport = false;
+        if (scrollDirection === 'up') {
+          const requiredVisibleHeight = Math.min(elH * 0.35, 160);
+          isInViewport = rect.top < winH * 0.85 && rect.bottom > requiredVisibleHeight;
+        } else {
+          isInViewport = rect.top < winH * 0.88 && rect.bottom > 30;
+        }
+
+        if (isInViewport) {
+          if (!el.classList.contains('is-revealed')) {
+            el.classList.add('is-revealed');
+
+            // Trigger number counters
+            el.querySelectorAll('.counter-number').forEach(c => animateCounter(c));
+
+            // Trigger linguistic fluency counters and bars
+            el.querySelectorAll('.counter-fluency').forEach(c => animateFluencyCounter(c));
+            el.querySelectorAll('.fluency-fill').forEach(bar => {
+              const tw = bar.style.getPropertyValue('--target-width') || bar.getAttribute('data-width') || '100%';
+              bar.style.width = tw;
+            });
+
+            // Trigger Section 2 curtain shutter opening
+            if (el.id === 'projects') {
+              const shutter = document.getElementById('curtain-shutter');
+              if (shutter) shutter.classList.add('is-open');
+            }
+          }
+        } else {
+          // Element has completely left the viewport (either scrolled above or below)
+          const isCompletelyOffscreen = rect.bottom < -40 || rect.top > winH + 40;
+          if (isCompletelyOffscreen && el.classList.contains('is-revealed')) {
+            el.classList.remove('is-revealed');
+
+            // Reset fluency counters so they replay on re-entry
+            el.querySelectorAll('.counter-fluency').forEach(c => {
+              c.dataset.animated = 'false';
+              c.textContent = '0';
+            });
+
+            // Reset fluency bars so they re-fill on re-entry
+            el.querySelectorAll('.fluency-fill').forEach(bar => {
+              bar.style.width = '0%';
+            });
+
+            // Reset curtain shutter whenever Section 2 leaves the viewport
+            if (el.id === 'projects') {
+              const shutter = document.getElementById('curtain-shutter');
+              if (shutter) shutter.classList.remove('is-open');
+            }
+
+            // Reset step activation states when Section 4 leaves viewport
+            if (el.id === 'process' || el.id === 'process-timeline') {
+              document.querySelectorAll('#process .step-item').forEach(step => {
+                step.classList.remove('is-active');
+              });
+            }
+          }
+        }
+      });
+    }
+
+    // Auxiliary IntersectionObserver to ensure immediate triggering across viewports
+    const revealObserver = new IntersectionObserver(() => {
+      checkScrollReveals();
+    }, {
+      threshold: [0, 0.1, 0.5]
+    });
+    document.querySelectorAll('.reveal, .reveal-card, .kinetic-heading, .quote-card-reveal, .project-card-cyber, #projects, #capabilities, #process, #contact').forEach(el => revealObserver.observe(el));
+
+    // Run check on page load
+    checkScrollReveals();
+
+    // Instantly reveal hero section elements and start counters on page load
+    document.querySelectorAll('#hero-section .reveal').forEach(el => el.classList.add('is-revealed'));
+    setTimeout(() => {
+      document.querySelectorAll('#hero-section .counter-number').forEach(c => animateCounter(c));
+    }, 120);
+
+    // Also observe stats specifically for immediate fluid counter trigger
+    const statBox = document.querySelector('.stat-box');
+    if (statBox) {
+      const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.counter-number').forEach(c => animateCounter(c));
+            statObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.05 });
+      statObserver.observe(statBox);
+    }
+
+    // 3. Smooth Ease-Out Number Counter (Fast 750ms Duration)
+    function animateCounter(el) {
+      if (el.dataset.animated === 'true') return;
+      el.dataset.animated = 'true';
+
+      const target = parseFloat(el.getAttribute('data-target'));
+      const duration = 750;
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const current = target * easeProgress;
+
+        el.textContent = Math.floor(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    // Linguistic Fluency Counter Numbers Count-Up (1200ms Silk Ease)
+    function animateFluencyCounter(el) {
+      if (el.dataset.animated === 'true') return;
+      el.dataset.animated = 'true';
+
+      const target = parseFloat(el.getAttribute('data-target'));
+      const duration = 1200;
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const current = target * easeProgress;
+
+        el.textContent = Math.floor(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(update);
+    }
+
+    // 4. Legendary 3D Gyroscopic Card Tilt & Flashlight Spotlight Tracker (RAF Throttled for 120fps Fluidity)
+    document.querySelectorAll('.project-card-cyber').forEach(card => {
+      let rect = null;
+      let rafId = null;
+      card.addEventListener('mouseenter', () => {
+        rect = card.getBoundingClientRect();
+      });
+      card.addEventListener('mousemove', (e) => {
+        if (!rect) rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -7;
+          const rotateY = ((x - centerX) / centerX) * 7;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale(1.02)`;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        rect = null;
+        card.style.transform = '';
+        if (typeof updateScrollDrivenAnimations === 'function') {
+          updateScrollDrivenAnimations(window.pageYOffset || document.documentElement.scrollTop);
+        }
+      });
+    });
+
+    document.querySelectorAll('.pinterest-card:not(.project-card-cyber)').forEach(card => {
+      let rect = null;
+      card.addEventListener('mouseenter', () => {
+        rect = card.getBoundingClientRect();
+      });
+      card.addEventListener('mousemove', (e) => {
+        if (!rect) rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+      card.addEventListener('mouseleave', () => {
+        rect = null;
+      });
+    });
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      toastMessage.textContent = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 2600);
+    }
+
+    // 6. Section 3: Magnetic Field Attraction Physics on Tech Chips (Zero-Reflow Cached Engine)
+    const techGroups = document.querySelectorAll('.tech-domain-group');
+    techGroups.forEach(group => {
+      const chips = group.querySelectorAll('.tech-chip');
+      let chipCenters = [];
+
+      function cacheChipCenters() {
+        chipCenters = Array.from(chips).map(chip => {
+          const rect = chip.getBoundingClientRect();
+          return {
+            chip,
+            centerX: rect.left + rect.width / 2,
+            centerY: rect.top + rect.height / 2
+          };
+        });
+      }
+
+      group.addEventListener('mouseenter', cacheChipCenters);
+
+      group.addEventListener('mousemove', (e) => {
+        if (!chipCenters.length) cacheChipCenters();
+        const mx = e.clientX;
+        const my = e.clientY;
+        chipCenters.forEach(item => {
+          const dx = mx - item.centerX;
+          const dy = my - item.centerY;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 75) {
+            const strength = (1 - dist / 75) * 8;
+            const angle = Math.atan2(dy, dx);
+            item.chip.style.transform = `translate3d(${Math.cos(angle) * strength}px, ${Math.sin(angle) * strength}px, 0) scale(1.05)`;
+            item.chip.classList.add('is-magnetized');
+          } else {
+            item.chip.style.transform = '';
+            item.chip.classList.remove('is-magnetized');
+          }
+        });
+      });
+
+      group.addEventListener('mouseleave', () => {
+        chips.forEach(chip => {
+          chip.style.transform = '';
+          chip.classList.remove('is-magnetized');
+        });
+        chipCenters = [];
+      });
+    });
+
+    // 7. Section 5: Dynamic Liquid Distortion Filter Modulation (Energy-Efficient On-Demand RAF)
+    const liquidTarget = document.querySelector('.liquid-headline');
+    const liquidDisp = document.getElementById('liquidDisplacement');
+    const liquidTurb = document.getElementById('liquidTurbulence');
+    if (liquidTarget && liquidDisp && liquidTurb) {
+      let liquidScale = 0;
+      let targetScale = 0;
+      let frame = 0;
+      let isLiquidRunning = false;
+
+      function updateLiquidFilter() {
+        liquidScale += (targetScale - liquidScale) * 0.12;
+        if (liquidScale > 0.05 || targetScale > 0) {
+          frame += 0.02;
+          liquidDisp.setAttribute('scale', liquidScale.toFixed(1));
+          liquidTurb.setAttribute('baseFrequency', `${(0.015 + Math.sin(frame) * 0.005).toFixed(3)} ${(0.015 + Math.cos(frame) * 0.005).toFixed(3)}`);
+          requestAnimationFrame(updateLiquidFilter);
+        } else {
+          liquidScale = 0;
+          liquidDisp.setAttribute('scale', '0');
+          isLiquidRunning = false;
+        }
+      }
+
+      function startLiquidLoop() {
+        if (!isLiquidRunning) {
+          isLiquidRunning = true;
+          requestAnimationFrame(updateLiquidFilter);
+        }
+      }
+
+      liquidTarget.addEventListener('mouseenter', () => {
+        targetScale = 14;
+        liquidTarget.classList.add('liquid-distort-active');
+        startLiquidLoop();
+      });
+      liquidTarget.addEventListener('mousemove', () => {
+        targetScale = 18;
+        startLiquidLoop();
+      });
+      liquidTarget.addEventListener('mouseleave', () => {
+        targetScale = 0;
+        setTimeout(() => {
+          if (targetScale === 0) liquidTarget.classList.remove('liquid-distort-active');
+        }, 300);
+      });
+    }
+  </script>
+</body>
+</html>
