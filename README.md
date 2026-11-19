@@ -52,7 +52,7 @@ Clone the repository and serve with any static web server:
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/portfolio.git
+git clone https://github.com/Mathan1227/portfolio.git
 
 # Navigate into the project directory
 cd portfolio
@@ -79,7 +79,7 @@ npx vercel
 1. Push this repository to GitHub.
 2. Go to **Settings → Pages**.
 3. Set the source branch to `main` and root `/`.
-4. Your site will be live at `https://<your-username>.github.io/<repo-name>/`.
+4. Your site will be live at `https://mathan1227.github.io/portfolio/`.
 
 ---
 

@@ -15,7 +15,10 @@
   <a href="https://wa.me/918925148149">
     <img src="https://img.shields.io/badge/WhatsApp-+91%2089251%2048149-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
   </a>
-  <a href="https://github.com">
+  <a href="https://github.com/Mathan1227">
+    <img src="https://img.shields.io/badge/GitHub-Mathan1227-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  <a href="https://github.com/Mathan1227/portfolio">
     <img src="https://img.shields.io/badge/Portfolio-Live_Site-111827?style=for-the-badge&logo=google-chrome&logoColor=dc2626" alt="Portfolio" />
   </a>
   <img src="https://img.shields.io/badge/Location-Coimbatore%2C%20India-0a0b10?style=for-the-badge&logo=google-maps&logoColor=dc2626" alt="Location" />
@@ -26,7 +29,7 @@
 ### ✦ Executive Summary
 
 ```yaml
-Name: Mathan Dinesh
+Name: Mathan Dineshkumar (Mathan Dinesh)
 Degree: B.Tech in Information Technology (Class of 2026)
 Institution: Sri Ramakrishna Engineering College (SREC), Coimbatore
 Core Focus: End-to-End Full-Stack Architecture & Deep Learning Vision (YOLOv8)
@@ -40,12 +43,12 @@ Availability: Open for Software Engineering Roles & Technical Collaborations
 ### 📊 GitHub Telemetry & Activity Matrix
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=mathandinesh&show_icons=true&theme=radical&bg_color=040507&border_color=dc2626&title_color=dc2626&text_color=ffffff&icon_color=dc2626&hide_border=false" alt="Mathan's GitHub Stats" width="49%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mathandinesh&layout=compact&theme=radical&bg_color=040507&border_color=dc2626&title_color=dc2626&text_color=ffffff&hide_border=false" alt="Top Languages" width="45%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Mathan1227&show_icons=true&theme=radical&bg_color=040507&border_color=dc2626&title_color=dc2626&text_color=ffffff&icon_color=dc2626&hide_border=false" alt="Mathan's GitHub Stats" width="49%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mathan1227&layout=compact&theme=radical&bg_color=040507&border_color=dc2626&title_color=dc2626&text_color=ffffff&hide_border=false" alt="Top Languages" width="45%" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=mathandinesh&theme=radical&background=040507&border=dc2626&stroke=dc2626&ring=dc2626&fire=dc2626&currStreakLabel=dc2626&hide_border=false" alt="GitHub Streak" width="95%" />
+  <img src="https://streak-stats.demolab.com/?user=Mathan1227&theme=radical&background=040507&border=dc2626&stroke=dc2626&ring=dc2626&fire=dc2626&currStreakLabel=dc2626&hide_border=false" alt="GitHub Streak" width="95%" />
 </p>
 
 ---
