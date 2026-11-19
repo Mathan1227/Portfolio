@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="https://mathan1227.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
+  <a href="https://mathan1227.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/LIVE_PORTFOLIO-TOUCH_TO_OPEN_WEBSITE-dc2626?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Touch to View Portfolio" height="42" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://mathan1227.github.io/portfolio/"><img src="https://img.shields.io/badge/Portfolio-mathan1227.github.io%2Fportfolio-111827?style=flat-square&logo=safari&logoColor=dc2626" alt="Portfolio URL" /></a>
+  <a href="https://mathan1227.github.io/Portfolio/"><img src="https://img.shields.io/badge/Portfolio-mathan1227.github.io%2FPortfolio-111827?style=flat-square&logo=safari&logoColor=dc2626" alt="Portfolio URL" /></a>
   <a href="mailto:mathandinesh003@gmail.com"><img src="https://img.shields.io/badge/Email-mathandinesh003%40gmail.com-111827?style=flat-square&logo=gmail&logoColor=dc2626" alt="Email" /></a>
   <a href="https://wa.me/918925148149"><img src="https://img.shields.io/badge/WhatsApp-+91_89251_48149-111827?style=flat-square&logo=whatsapp&logoColor=25D366" alt="WhatsApp" /></a>
   <a href="https://github.com/Mathan1227"><img src="https://img.shields.io/badge/GitHub-Mathan1227-111827?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>

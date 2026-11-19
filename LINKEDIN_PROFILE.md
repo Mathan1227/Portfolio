@@ -28,7 +28,7 @@ Full-Stack & Deep Learning Engineer building high-performance web systems and re
 • Credentials: Smart India Hackathon '24 National Finalist | NVIDIA DLI Certified
 • Education: B.Tech Information Technology @ SREC Coimbatore (Class of 2026)
 
-Portfolio: https://mathan1227.github.io/portfolio/
+Portfolio: https://mathan1227.github.io/Portfolio/
 Contact: mathandinesh003@gmail.com
 ```
 
@@ -39,7 +39,7 @@ Contact: mathandinesh003@gmail.com
 Never make recruiters guess if your code works. Put your portfolio right under your About section:
 
 * **Type:** Add Link
-* **URL:** `https://mathan1227.github.io/portfolio/`
+* **URL:** `https://mathan1227.github.io/Portfolio/`
 * **Title:** `✦ Engineering Portfolio — Full-Stack & Deep Learning`
 * **Description:** `Interactive showcase of production React web apps, YOLOv8 vision benchmarks, and system architecture.`
 
