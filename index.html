@@ -708,12 +708,23 @@
       pointer-events: none;
     }
 
-    /* Silky Multi-Plane Counter-Parallax Elements */
+    /* Silky Multi-Plane Counter-Parallax Elements & Hero Portrait Entrance */
     .hero-bg-text {
       will-change: transform;
     }
     #hero-portrait-img {
       will-change: transform;
+      animation: heroPortraitIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+    @keyframes heroPortraitIn {
+      0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     /* Snappy One-Time Letter Arrival on Home Page (Apple / Linear Stagger) */
@@ -735,7 +746,7 @@
       }
     }
 
-    /* Cinematic Ambient Glow behind Portrait (Static, Pure Studio Rim Light) */
+    /* Cinematic Ambient Glow behind Portrait with Ambient Rim Breathing */
     .hero-ambient-glow {
       position: absolute;
       top: 50%;
@@ -748,6 +759,24 @@
       filter: blur(48px);
       pointer-events: none;
       z-index: 0;
+      animation: ambientHaloPulse 4.5s ease-in-out infinite alternate;
+    }
+    @media (max-width: 639px) {
+      .hero-ambient-glow {
+        width: 290px;
+        height: 290px;
+        filter: blur(36px);
+      }
+    }
+    @keyframes ambientHaloPulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.92);
+        opacity: 0.70;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 1;
+      }
     }
 
     /* Clean Static Accent for "Hi, I'm" (Snappy Reveal on Load, Zero Floating) */
@@ -1022,13 +1051,13 @@
       <div class="grid lg:grid-cols-12 gap-8 items-end relative z-10 pt-4 sm:pt-14">
         
         <!-- Center Column: Cinematic Portrait (Order 1 on mobile, Order 2 on desktop) -->
-        <div class="order-2 lg:order-2 lg:col-span-5 flex flex-col items-center justify-end relative z-10 mb-0 sm:-mb-14 reveal delay-100">
+        <div class="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-end relative z-10 mb-0 sm:-mb-14 reveal delay-100">
 
           <!-- Frameless Portrait Container with Ambient Halo -->
           <div class="relative w-full max-w-lg flex flex-col items-center pt-2 sm:pt-4 lg:pt-0" id="portrait-stage">
             
             <!-- Mobile-Only Moniker: "Hi, I'm MATHAN DINESH" lifted cleanly above portrait, 100% visible on all phones -->
-            <div class="lg:hidden flex flex-col items-center justify-center select-none mb-4 sm:mb-6 z-20 relative">
+            <div id="hero-bg-container-mobile" class="lg:hidden flex flex-col items-center justify-center select-none mb-3 sm:mb-6 z-20 relative">
               <span class="kinetic-greeting font-handwriting text-2xl sm:text-3xl text-brand-red block mb-1.5 tracking-wide">Hi, I'm</span>
               <div class="hero-bg-text flex justify-center tracking-tight text-3xl sm:text-5xl font-display text-white pointer-events-auto cursor-pointer" title="Click to replay letter reveal">
                 <span class="p-char" style="--idx: 0">M</span>
@@ -1056,7 +1085,7 @@
                 id="hero-portrait-img" 
                 src="assets/mathan_edited_frameless.png?v=15" 
                 alt="Mathan Dinesh - Full-Stack Developer & AI Engineer" 
-                class="w-auto h-[300px] sm:h-[480px] lg:h-[680px] object-contain pointer-events-none select-none"
+                class="w-auto h-[320px] sm:h-[480px] lg:h-[680px] object-contain pointer-events-none select-none"
               />
             </div>
 
@@ -1064,7 +1093,7 @@
         </div>
 
         <!-- Left Column: Name & Intro (Order 2 on mobile, Order 1 on desktop) -->
-        <div class="order-1 lg:order-1 lg:col-span-4 space-y-5 sm:space-y-6 pb-6 z-20 reveal text-center lg:text-left flex flex-col items-center lg:items-start">
+        <div class="order-2 lg:order-1 lg:col-span-4 space-y-5 sm:space-y-6 pb-6 z-20 reveal text-center lg:text-left flex flex-col items-center lg:items-start">
           <div class="space-y-3 sm:space-y-4">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 text-brand-red text-xs font-mono font-bold tracking-wider uppercase">
               <span class="text-brand-red text-xs font-bold">✦</span>
@@ -1845,8 +1874,8 @@
 
     // 1. Fluid Parallax & Fade on Scroll (100% Rock-Solid, No Letter Float)
     const heroPortrait = document.getElementById('hero-portrait-img');
-    const heroBgText = document.getElementById('hero-bg-text');
-    const heroBgContainer = document.getElementById('hero-bg-container') || heroBgText;
+    const heroBgContainer = document.getElementById('hero-bg-container');
+    const heroBgContainerMobile = document.getElementById('hero-bg-container-mobile');
     const progressBar = document.getElementById('scroll-progress');
 
     let targetY = window.pageYOffset || document.documentElement.scrollTop;
@@ -1879,33 +1908,34 @@
         progressBar.style.width = pct.toFixed(2) + '%';
       }
 
-      // Smoothly fade out background wordmark and label as user scrolls past hero so it never bleeds into second page
-      if (heroBgContainer) {
-        const fade = Math.min(1, Math.max(0, (currentY - 120) / 450));
+      // Smoothly fade out desktop & mobile moniker on scroll
+      if (heroBgContainer && window.innerWidth >= 1024) {
+        const fade = Math.min(1, Math.max(0, (currentY - 100) / 420));
         heroBgContainer.style.opacity = (0.95 * (1 - fade)).toFixed(2);
         heroBgContainer.style.visibility = fade >= 1 ? 'hidden' : 'visible';
       }
-
-      // Replay snappy letter wave on MATHAN DINESH when scrolling all the way back to top
-      if (currentY > 400) {
-        hasScrolledPastHero = true;
-      } else if (currentY < 40 && hasScrolledPastHero) {
-        hasScrolledPastHero = false;
-        if (heroBgText) {
-          const chars = heroBgText.querySelectorAll('.p-char');
-          chars.forEach(c => {
-            c.style.animation = 'none';
-            void c.offsetWidth;
-            c.style.animation = '';
-          });
-        }
+      if (heroBgContainerMobile && window.innerWidth < 1024) {
+        const fade = Math.min(1, Math.max(0, (currentY - 40) / 320));
+        heroBgContainerMobile.style.opacity = (0.95 * (1 - fade)).toFixed(2);
+        heroBgContainerMobile.style.visibility = fade >= 1 ? 'hidden' : 'visible';
       }
 
-      // Subtle counter-parallax on portrait (only on desktop where headroom is abundant)
-      if (window.innerWidth >= 1024 && currentY < 1300 && heroPortrait) {
-        heroPortrait.style.transform = `translate3d(0, ${(-currentY * 0.18).toFixed(2)}px, 0)`;
-      } else if (heroPortrait) {
-        heroPortrait.style.transform = 'none';
+      // Replay snappy letter wave on MATHAN DINESH when scrolling all the way back to top on any device
+      if (currentY > 300) {
+        hasScrolledPastHero = true;
+      } else if (currentY < 30 && hasScrolledPastHero) {
+        hasScrolledPastHero = false;
+        document.querySelectorAll('.hero-bg-text .p-char').forEach(c => {
+          c.style.animation = 'none';
+          void c.offsetWidth;
+          c.style.animation = '';
+        });
+      }
+
+      // Subtle hardware-accelerated counter-parallax on portrait across all devices
+      if (currentY < 1300 && heroPortrait) {
+        const parallaxRate = window.innerWidth >= 1024 ? 0.16 : 0.08;
+        heroPortrait.style.transform = `translate3d(0, ${(-currentY * parallaxRate).toFixed(2)}px, 0)`;
       }
 
       // Update Scroll-Driven Dynamic Animations across Sections 2, 3, 4, 5
@@ -1917,13 +1947,19 @@
         requestAnimationFrame(renderSmoothParallax);
       } else {
         currentY = targetY;
-        if (heroBgContainer) {
+        if (heroBgContainer && window.innerWidth >= 1024) {
           const fade = Math.min(1, Math.max(0, targetY / 380));
           heroBgContainer.style.opacity = (0.92 * (1 - fade)).toFixed(2);
           heroBgContainer.style.visibility = fade >= 1 ? 'hidden' : 'visible';
         }
+        if (heroBgContainerMobile && window.innerWidth < 1024) {
+          const fade = Math.min(1, Math.max(0, targetY / 280));
+          heroBgContainerMobile.style.opacity = (0.92 * (1 - fade)).toFixed(2);
+          heroBgContainerMobile.style.visibility = fade >= 1 ? 'hidden' : 'visible';
+        }
         if (heroPortrait && targetY < 1300) {
-          heroPortrait.style.transform = `translate3d(0, ${(-targetY * 0.18).toFixed(2)}px, 0)`;
+          const parallaxRate = window.innerWidth >= 1024 ? 0.16 : 0.08;
+          heroPortrait.style.transform = `translate3d(0, ${(-targetY * parallaxRate).toFixed(2)}px, 0)`;
         }
         updateScrollDrivenAnimations(targetY);
         checkScrollReveals();
