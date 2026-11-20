@@ -1,12 +1,15 @@
 # Mathan Dinesh — Engineering Portfolio
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,6,11,20&height=180&section=header&text=Mathan%20Dinesh%20%E2%80%94%20Portfolio&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=42&desc=Full-Stack%20Developer%20%26%20AI%20Engineer&descAlignY=66&descSize=16" alt="Portfolio Header" width="100%" />
+  <a href="https://mathan1227.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
+    <img src="header.svg" alt="Portfolio Header" width="100%" />
+  </a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Production_Ready-10b981?style=for-the-badge&logo=vercel&logoColor=white" alt="Status" />
   <img src="https://img.shields.io/badge/Architecture-Single_Page_App-dc2626?style=for-the-badge" alt="Architecture" />
+  <a href="https://www.linkedin.com/in/mathan-dinesh" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mathan_Dinesh-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
 </p>
 

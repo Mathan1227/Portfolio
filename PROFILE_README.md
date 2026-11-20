@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=040507&stroke=dc2626&strokeWidth=2.5&height=180&section=header&text=Mathan%20Dinesh&fontSize=42&fontColor=ffffff&fontAlignY=42&desc=Full-Stack%20Developer%20%7C%20AI%20%26%20Deep%20Learning%20Engineer&descAlignY=68&descSize=16" alt="Mathan Dinesh" width="100%" />
+  <a href="https://mathan1227.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
+    <img src="https://raw.githubusercontent.com/Mathan1227/Portfolio/main/header.svg" alt="Mathan Dinesh - Full-Stack Developer & AI Systems Engineer" width="100%" />
+  </a>
 </p>
 
 <p align="center">
@@ -10,6 +12,7 @@
 
 <p align="center">
   <a href="https://mathan1227.github.io/Portfolio/"><img src="https://img.shields.io/badge/Portfolio-mathan1227.github.io%2FPortfolio-111827?style=flat-square&logo=safari&logoColor=dc2626" alt="Portfolio URL" /></a>
+  <a href="https://www.linkedin.com/in/mathan-dinesh" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-Mathan_Dinesh-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
   <a href="mailto:mathandinesh003@gmail.com"><img src="https://img.shields.io/badge/Email-mathandinesh003%40gmail.com-111827?style=flat-square&logo=gmail&logoColor=dc2626" alt="Email" /></a>
   <a href="https://wa.me/918925148149"><img src="https://img.shields.io/badge/WhatsApp-+91_89251_48149-111827?style=flat-square&logo=whatsapp&logoColor=25D366" alt="WhatsApp" /></a>
   <a href="https://github.com/Mathan1227"><img src="https://img.shields.io/badge/GitHub-Mathan1227-111827?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
