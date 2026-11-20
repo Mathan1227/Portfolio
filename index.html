@@ -65,10 +65,18 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-track { background: #090a0d; }
-    ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 9999px; }
+    /* Custom Scrollbar - Active ONLY on Desktop pointer devices */
+    @media (hover: hover) and (pointer: fine) {
+      ::-webkit-scrollbar { width: 7px; }
+      ::-webkit-scrollbar-track { background: #090a0d; }
+      ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 9999px; }
+      ::-webkit-scrollbar-thumb:hover { background: #ef4444; }
+    }
+    /* Mobile / Touchscreens - Hide custom scrollbar track completely */
+    @media (hover: none) or (pointer: coarse) {
+      ::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
+      html, body { scrollbar-width: none !important; -ms-overflow-style: none !important; }
+    }
 
     /* Giant Background Word (Editorial Moniker) */
     .hero-bg-text {
@@ -921,7 +929,7 @@
     <section id="hero-section" class="relative pt-6 sm:pt-10 pb-12 overflow-hidden border-b border-white/[0.08]">
       
       <!-- GIANT BACKGROUND TEXT: "MATHAN DINESH" WITH "Hi, I'm" (BEHIND SUBJECT HEAD & SHOULDERS) -->
-      <div id="hero-bg-container" class="absolute inset-x-0 top-1 sm:top-2 flex flex-col items-center justify-start select-none pointer-events-none z-0">
+      <div id="hero-bg-container" class="hidden lg:flex absolute inset-x-0 top-2 flex-col items-center justify-start select-none pointer-events-none z-0">
         <span class="kinetic-greeting font-handwriting text-2xl sm:text-5xl text-brand-red block -mb-1 sm:-mb-3 tracking-wide pointer-events-auto">Hi, I'm</span>
         <div id="hero-bg-text" class="hero-bg-text flex justify-center tracking-tight pointer-events-auto cursor-pointer" title="Click to replay letter reveal">
           <span class="p-char" style="--idx: 0">M</span>
@@ -943,11 +951,31 @@
       <div class="grid lg:grid-cols-12 gap-8 items-end relative z-10 pt-4 sm:pt-14">
         
         <!-- Center Column: Cinematic Portrait (Order 1 on mobile, Order 2 on desktop) -->
-        <div class="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-end relative z-10 mb-0 sm:-mb-14 reveal delay-100">
+        <div class="order-2 lg:order-2 lg:col-span-5 flex flex-col items-center justify-end relative z-10 mb-0 sm:-mb-14 reveal delay-100">
 
           <!-- Frameless Portrait Container with Ambient Halo -->
-          <div class="relative w-full max-w-lg flex flex-col items-center" id="portrait-stage">
+          <div class="relative w-full max-w-lg flex flex-col items-center pt-4 sm:pt-6 lg:pt-0" id="portrait-stage">
             
+            <!-- Mobile-Only Moniker: "Hi, I'm MATHAN DINESH" sitting directly behind portrait on mobile -->
+            <div class="lg:hidden flex flex-col items-center justify-center select-none pointer-events-none -mb-8 sm:-mb-10 z-0">
+              <span class="kinetic-greeting font-handwriting text-2xl sm:text-3xl text-brand-red block -mb-1 tracking-wide">Hi, I'm</span>
+              <div class="hero-bg-text flex justify-center tracking-tight text-3xl sm:text-5xl font-display text-white pointer-events-auto cursor-pointer" title="Click to replay letter reveal">
+                <span class="p-char" style="--idx: 0">M</span>
+                <span class="p-char" style="--idx: 1">A</span>
+                <span class="p-char" style="--idx: 2">T</span>
+                <span class="p-char" style="--idx: 3">H</span>
+                <span class="p-char" style="--idx: 4">A</span>
+                <span class="p-char" style="--idx: 5">N</span>
+                <span class="p-char mx-1 sm:mx-3" style="--idx: 6">&nbsp;</span>
+                <span class="p-char" style="--idx: 7">D</span>
+                <span class="p-char" style="--idx: 8">I</span>
+                <span class="p-char" style="--idx: 9">N</span>
+                <span class="p-char" style="--idx: 10">E</span>
+                <span class="p-char" style="--idx: 11">S</span>
+                <span class="p-char" style="--idx: 12">H</span>
+              </div>
+            </div>
+
             <!-- Ambient Breathing Crimson Glow -->
             <div class="hero-ambient-glow"></div>
 
@@ -957,7 +985,7 @@
                 id="hero-portrait-img" 
                 src="assets/mathan_edited_frameless.png?v=15" 
                 alt="Mathan Dinesh - Full-Stack Developer & AI Engineer" 
-                class="w-auto h-[350px] sm:h-[520px] lg:h-[680px] object-contain pointer-events-none select-none"
+                class="w-auto h-[300px] sm:h-[480px] lg:h-[680px] object-contain pointer-events-none select-none"
               />
             </div>
 
@@ -965,7 +993,7 @@
         </div>
 
         <!-- Left Column: Name & Intro (Order 2 on mobile, Order 1 on desktop) -->
-        <div class="order-2 lg:order-1 lg:col-span-4 space-y-5 sm:space-y-6 pb-6 z-20 reveal text-center lg:text-left flex flex-col items-center lg:items-start">
+        <div class="order-1 lg:order-1 lg:col-span-4 space-y-5 sm:space-y-6 pb-6 z-20 reveal text-center lg:text-left flex flex-col items-center lg:items-start">
           <div class="space-y-3 sm:space-y-4">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 text-brand-red text-xs font-mono font-bold tracking-wider uppercase">
               <span class="text-brand-red text-xs font-bold">✦</span>
@@ -1546,7 +1574,7 @@
     </section>
 
     <!-- SECTION 5: LET'S WORK TOGETHER (BOTTOM FOOTER CONTACT BANNER) -->
-    <section id="contact" class="relative pinterest-card p-8 sm:p-14 lg:p-16 min-h-[75vh] flex flex-col justify-center border-t-2 border-t-brand-red reveal scroll-mt-28 overflow-hidden my-12">
+    <section id="contact" class="relative pinterest-card p-6 sm:p-12 lg:p-16 min-h-[75vh] flex flex-col justify-center border-t-2 border-t-brand-red reveal scroll-mt-28 overflow-hidden my-12">
       
       <!-- SVG Filter for Liquid Chromatic Distortion -->
       <svg class="sr-only" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
@@ -1724,17 +1752,17 @@
     let currentY = targetY;
     let isParallaxLooping = false;
 
-    // Snappy One-Time Letter Arrival Replay on Click
-    if (heroBgText) {
-      heroBgText.addEventListener('click', () => {
-        const chars = heroBgText.querySelectorAll('.p-char');
+    // Snappy One-Time Letter Arrival Replay on Click (Desktop & Mobile)
+    document.querySelectorAll('.hero-bg-text').forEach(bgText => {
+      bgText.addEventListener('click', () => {
+        const chars = bgText.querySelectorAll('.p-char');
         chars.forEach(c => {
           c.style.animation = 'none';
           void c.offsetWidth;
           c.style.animation = '';
         });
       });
-    }
+    });
 
     let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
     let scrollDirection = 'down';
