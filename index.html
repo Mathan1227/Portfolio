@@ -708,23 +708,12 @@
       pointer-events: none;
     }
 
-    /* Silky Multi-Plane Counter-Parallax Elements & Hero Portrait Entrance */
+    /* Silky Multi-Plane Counter-Parallax Elements */
     .hero-bg-text {
       will-change: transform;
     }
     #hero-portrait-img {
       will-change: transform;
-      animation: heroPortraitIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
-    }
-    @keyframes heroPortraitIn {
-      0% {
-        opacity: 0;
-        transform: translateY(22px) scale(0.96);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
     }
 
     /* Snappy One-Time Letter Arrival on Home Page (Apple / Linear Stagger) */
@@ -1022,11 +1011,10 @@
   </header>
 
   <!-- MAIN WRAPPER -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12 space-y-16 sm:space-y-28">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4 pb-12">
 
     <!-- HERO SECTION (EXACT REPLICA OF PINTEREST PIN 1: RAYHAN ADITYA STYLE) -->
-    <div id="hero" class="absolute -top-28 left-0 pointer-events-none"></div>
-    <section id="hero-section" class="relative pt-8 sm:pt-12 lg:pt-16 pb-12 overflow-hidden border-b border-white/[0.08]">
+    <section id="hero-section" class="relative pt-2 sm:pt-4 lg:pt-6 pb-8 sm:pb-12 overflow-hidden border-b border-white/[0.08]">
       
       <!-- GIANT BACKGROUND TEXT: "MATHAN DINESH" WITH "Hi, I'm" (PERFECTLY FRAMED & VISIBLE) -->
       <div id="hero-bg-container" class="hidden lg:flex absolute inset-x-0 top-3 sm:top-4 lg:top-5 flex-col items-center justify-start select-none pointer-events-none z-0">
@@ -1051,7 +1039,7 @@
       <div class="grid lg:grid-cols-12 gap-8 items-end relative z-10 pt-4 sm:pt-14">
         
         <!-- Center Column: Cinematic Portrait (Order 1 on mobile, Order 2 on desktop) -->
-        <div class="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-end relative z-10 mb-0 sm:-mb-14 reveal delay-100">
+        <div class="order-1 lg:order-2 lg:col-span-5 flex flex-col items-center justify-end relative z-10 mb-0 sm:-mb-14">
 
           <!-- Frameless Portrait Container with Ambient Halo -->
           <div class="relative w-full max-w-lg flex flex-col items-center pt-2 sm:pt-4 lg:pt-0" id="portrait-stage">
@@ -1093,7 +1081,7 @@
         </div>
 
         <!-- Left Column: Name & Intro (Order 2 on mobile, Order 1 on desktop) -->
-        <div class="order-2 lg:order-1 lg:col-span-4 space-y-5 sm:space-y-6 pb-6 z-20 reveal text-center lg:text-left flex flex-col items-center lg:items-start">
+        <div class="order-2 lg:order-1 lg:col-span-4 space-y-5 sm:space-y-6 pb-6 z-20 text-center lg:text-left flex flex-col items-center lg:items-start">
           <div class="space-y-3 sm:space-y-4">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/25 text-brand-red text-xs font-mono font-bold tracking-wider uppercase">
               <span class="text-brand-red text-xs font-bold">✦</span>
@@ -1126,7 +1114,7 @@
         </div>
 
         <!-- Right Column: Tagline & Vertical Stats Counter (Order 3 on mobile, Order 3 on desktop) -->
-        <div class="order-3 lg:order-3 lg:col-span-3 space-y-6 sm:space-y-8 pb-8 z-20 reveal delay-200">
+        <div class="order-3 lg:order-3 lg:col-span-3 space-y-6 sm:space-y-8 pb-8 z-20">
           
           <div class="flex items-start gap-3 justify-center lg:justify-start">
             <span class="text-brand-red text-sm font-bold">✦</span>
@@ -1872,15 +1860,16 @@
     }
 
 
-    // 1. Fluid Parallax & Fade on Scroll (100% Rock-Solid, No Letter Float)
+    // 1. Fluid Parallax & Fade on Scroll (100% Rock-Solid Direct Sync)
     const heroPortrait = document.getElementById('hero-portrait-img');
     const heroBgContainer = document.getElementById('hero-bg-container');
     const heroBgContainerMobile = document.getElementById('hero-bg-container-mobile');
     const progressBar = document.getElementById('scroll-progress');
 
-    let targetY = window.pageYOffset || document.documentElement.scrollTop;
-    let currentY = targetY;
-    let isParallaxLooping = false;
+    let isTicking = false;
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollDirection = 'down';
+    let hasScrolledPastHero = false;
 
     // Snappy One-Time Letter Arrival Replay on Click (Desktop & Mobile)
     document.querySelectorAll('.hero-bg-text').forEach(bgText => {
@@ -1894,36 +1883,44 @@
       });
     });
 
-    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-    let scrollDirection = 'down';
-    let hasScrolledPastHero = false;
+    function renderParallax() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      scrollDirection = scrollY >= lastScrollY ? 'down' : 'up';
+      lastScrollY = scrollY;
 
-    function renderSmoothParallax() {
-      targetY = window.pageYOffset || document.documentElement.scrollTop;
-      currentY += (targetY - currentY) * 0.45;
-
+      // 1. Reading progress bar
       if (progressBar) {
         const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const pct = docHeight > 0 ? (currentY / docHeight) * 100 : 0;
+        const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
         progressBar.style.width = pct.toFixed(2) + '%';
       }
 
-      // Smoothly fade out desktop & mobile moniker on scroll
+      // 2. Smooth fade out desktop & mobile moniker on scroll
       if (heroBgContainer && window.innerWidth >= 1024) {
-        const fade = Math.min(1, Math.max(0, (currentY - 100) / 420));
+        const fade = Math.min(1, Math.max(0, (scrollY - 80) / 400));
         heroBgContainer.style.opacity = (0.95 * (1 - fade)).toFixed(2);
         heroBgContainer.style.visibility = fade >= 1 ? 'hidden' : 'visible';
       }
       if (heroBgContainerMobile && window.innerWidth < 1024) {
-        const fade = Math.min(1, Math.max(0, (currentY - 40) / 320));
+        const fade = Math.min(1, Math.max(0, (scrollY - 30) / 280));
         heroBgContainerMobile.style.opacity = (0.95 * (1 - fade)).toFixed(2);
         heroBgContainerMobile.style.visibility = fade >= 1 ? 'hidden' : 'visible';
       }
 
-      // Replay snappy letter wave on MATHAN DINESH when scrolling all the way back to top on any device
-      if (currentY > 300) {
+      // 3. Subtle, rock-solid counter-parallax on portrait across all devices
+      if (heroPortrait && scrollY < 1300) {
+        const parallaxRate = window.innerWidth >= 1024 ? 0.14 : 0.06;
+        heroPortrait.style.transform = `translate3d(0, ${(-scrollY * parallaxRate).toFixed(2)}px, 0)`;
+      }
+
+      // 4. Update timeline laser and other sections
+      updateScrollDrivenAnimations(scrollY);
+      checkScrollReveals();
+
+      // 5. Letter wave replay on MATHAN DINESH when scrolling all the way back to top
+      if (scrollY > 300) {
         hasScrolledPastHero = true;
-      } else if (currentY < 30 && hasScrolledPastHero) {
+      } else if (scrollY < 20 && hasScrolledPastHero) {
         hasScrolledPastHero = false;
         document.querySelectorAll('.hero-bg-text .p-char').forEach(c => {
           c.style.animation = 'none';
@@ -1932,40 +1929,19 @@
         });
       }
 
-      // Subtle hardware-accelerated counter-parallax on portrait across all devices
-      if (currentY < 1300 && heroPortrait) {
-        const parallaxRate = window.innerWidth >= 1024 ? 0.16 : 0.08;
-        heroPortrait.style.transform = `translate3d(0, ${(-currentY * parallaxRate).toFixed(2)}px, 0)`;
-      }
-
-      // Update Scroll-Driven Dynamic Animations across Sections 2, 3, 4, 5
-      updateScrollDrivenAnimations(currentY);
-      checkScrollReveals();
-
-      let stillMoving = Math.abs(targetY - currentY) > 0.15;
-      if (stillMoving) {
-        requestAnimationFrame(renderSmoothParallax);
-      } else {
-        currentY = targetY;
-        if (heroBgContainer && window.innerWidth >= 1024) {
-          const fade = Math.min(1, Math.max(0, targetY / 380));
-          heroBgContainer.style.opacity = (0.92 * (1 - fade)).toFixed(2);
-          heroBgContainer.style.visibility = fade >= 1 ? 'hidden' : 'visible';
-        }
-        if (heroBgContainerMobile && window.innerWidth < 1024) {
-          const fade = Math.min(1, Math.max(0, targetY / 280));
-          heroBgContainerMobile.style.opacity = (0.92 * (1 - fade)).toFixed(2);
-          heroBgContainerMobile.style.visibility = fade >= 1 ? 'hidden' : 'visible';
-        }
-        if (heroPortrait && targetY < 1300) {
-          const parallaxRate = window.innerWidth >= 1024 ? 0.16 : 0.08;
-          heroPortrait.style.transform = `translate3d(0, ${(-targetY * parallaxRate).toFixed(2)}px, 0)`;
-        }
-        updateScrollDrivenAnimations(targetY);
-        checkScrollReveals();
-        isParallaxLooping = false;
-      }
+      isTicking = false;
     }
+
+    // Run on page load
+    requestAnimationFrame(renderParallax);
+
+    // Run on scroll throttled via requestAnimationFrame (Strict 120fps/60fps direct sync)
+    window.addEventListener('scroll', () => {
+      if (!isTicking) {
+        isTicking = true;
+        requestAnimationFrame(renderParallax);
+      }
+    }, { passive: true });
 
     // Scroll-Driven Interactive Laser Stepper & Section Parallax (Bidirectional)
     function updateScrollDrivenAnimations(scrollY) {
@@ -2017,21 +1993,6 @@
         }
       }
     }
-
-    // Run on page load
-    requestAnimationFrame(renderSmoothParallax);
-
-    // Run on scroll with direction detection (Debounced to 60fps/120fps display refresh via RAF)
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      scrollDirection = currentScroll >= lastScrollY ? 'down' : 'up';
-      lastScrollY = currentScroll;
-
-      if (!isParallaxLooping) {
-        isParallaxLooping = true;
-        requestAnimationFrame(renderSmoothParallax);
-      }
-    }, { passive: true });
 
     // 2. High-Performance Bidirectional Scroll Reveal (Scroll UP & Scroll DOWN)
     const cachedRevealElements = Array.from(document.querySelectorAll(
